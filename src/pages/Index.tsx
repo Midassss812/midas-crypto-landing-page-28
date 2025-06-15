@@ -41,8 +41,8 @@ const Index = () => {
                 width: '120px',
                 animationDelay: `${Math.random() * 15 + 2}s`,
                 animationDuration: `${Math.random() * 2 + 2}s`,
-                '--direction': `${direction}deg`,
-                '--distance': `${Math.random() * 200 + 150}px`
+                ['--direction' as any]: `${direction}deg`,
+                ['--distance' as any]: `${Math.random() * 200 + 150}px`
               }}
             />
           );
@@ -63,13 +63,13 @@ const Index = () => {
           {/* Midas Logo and Text - Centered */}
           <div className="space-y-6">
             {/* Midas with logo - Centered */}
-            <div className="flex items-center justify-center gap-6">
+            <div className="flex items-center justify-center gap-8">
               <img 
                 src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" 
                 alt="Midas Logo" 
-                className="h-24 w-24 object-contain filter drop-shadow-lg"
+                className="h-32 w-32 object-contain filter drop-shadow-2xl"
               />
-              <span className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#caa75d] font-inter tracking-tight">
+              <span className="text-6xl sm:text-7xl lg:text-8xl font-bold text-[#caa75d] font-inter tracking-tight">
                 Midas
               </span>
             </div>
@@ -81,7 +81,7 @@ const Index = () => {
               <span className="inline-block text-[#f0f0f0]">
                 нового
               </span>{' '}
-              <span className="inline-block text-[#f0f0f0]">
+              <span className="inline-block text-white">
                 поколения
               </span>
             </h1>
@@ -94,41 +94,41 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8">
             <Button
               size="lg"
-              className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold px-20 py-10 text-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
+              className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold px-24 py-12 text-3xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
               onClick={() => window.location.href = '/trader.html'}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 Стать трейдером
               </span>
-              <ArrowRight className="ml-3 h-7 w-7 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="ml-3 h-8 w-8 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
 
             <Button
               size="lg"
               variant="outline"
-              className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold px-20 py-10 text-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
+              className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold px-24 py-12 text-3xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
               onClick={() => window.location.href = '/business.html'}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 Интеграция Midas
               </span>
-              <ArrowRight className="ml-3 h-7 w-7 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="ml-3 h-8 w-8 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </div>
 
           {/* Trust Indicators - Made Larger and More Prominent */}
           <div className="pt-16 grid grid-cols-3 gap-8 text-center opacity-95">
             <div className="space-y-4 hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold text-[#caa75d] mb-2">99%</div>
-              <div className="text-lg text-[#f0f0f0] font-medium">Конверсия</div>
+              <div className="text-6xl font-bold text-[#caa75d] mb-3">99%</div>
+              <div className="text-2xl text-[#f0f0f0] font-medium">Конверсия</div>
             </div>
             <div className="space-y-4 hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold text-[#caa75d] mb-2">24/7</div>
-              <div className="text-lg text-[#f0f0f0] font-medium">Поддержка</div>
+              <div className="text-6xl font-bold text-[#caa75d] mb-3">24/7</div>
+              <div className="text-2xl text-[#f0f0f0] font-medium">Поддержка</div>
             </div>
             <div className="space-y-4 hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold text-[#caa75d] mb-2">API</div>
-              <div className="text-lg text-[#f0f0f0] font-medium">Интеграция</div>
+              <div className="text-6xl font-bold text-[#caa75d] mb-3">API</div>
+              <div className="text-2xl text-[#f0f0f0] font-medium">Интеграция</div>
             </div>
           </div>
         </div>
