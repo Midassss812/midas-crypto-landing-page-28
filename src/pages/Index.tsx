@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Crown, ArrowRight, Mail, Send } from "lucide-react";
+import { Crown, ArrowRight, Mail, Send, User } from "lucide-react";
 
 const Index = () => {
   return (
@@ -41,9 +41,9 @@ const Index = () => {
                 width: '120px',
                 animationDelay: `${Math.random() * 15 + 2}s`,
                 animationDuration: `${Math.random() * 2 + 2}s`,
-                ['--direction' as any]: `${direction}deg`,
-                ['--distance' as any]: `${Math.random() * 200 + 150}px`
-              }}
+                '--direction': `${direction}deg`,
+                '--distance': `${Math.random() * 200 + 150}px`
+              } as React.CSSProperties}
             />
           );
         })}
@@ -52,26 +52,32 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020202]/30 to-[#020202]/70" />
       </div>
 
-      {/* Crown in top left */}
-      <div className="absolute top-8 left-8 z-10">
+      {/* Person with crown in top left */}
+      <div className="absolute top-6 left-6 z-10 flex items-center space-x-2">
+        <User className="h-12 w-12 text-[#caa75d]" />
         <Crown className="h-8 w-8 text-[#caa75d]" />
       </div>
 
       {/* Hero Section */}
       <main className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Midas Logo and Text - Centered */}
+          {/* Midas Logo and Text - Strictly Centered */}
           <div className="space-y-6">
-            {/* Midas with logo - Centered */}
-            <div className="flex items-center justify-center gap-8">
-              <img 
-                src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" 
-                alt="Midas Logo" 
-                className="h-32 w-32 object-contain filter drop-shadow-2xl"
-              />
-              <span className="text-6xl sm:text-7xl lg:text-8xl font-bold text-[#caa75d] font-inter tracking-tight">
-                Midas
-              </span>
+            {/* Midas with logo and crown over M - Strictly Centered */}
+            <div className="flex items-center justify-center">
+              <div className="flex items-center gap-8">
+                <img 
+                  src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" 
+                  alt="Midas Logo" 
+                  className="h-40 w-40 object-contain filter drop-shadow-2xl"
+                />
+                <div className="relative">
+                  <Crown className="absolute -top-8 left-0 h-8 w-8 text-[#caa75d] z-10" />
+                  <span className="text-6xl sm:text-7xl lg:text-8xl font-bold text-[#caa75d] font-inter tracking-tight">
+                    Midas
+                  </span>
+                </div>
+              </div>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight font-inter">
@@ -119,16 +125,16 @@ const Index = () => {
           {/* Trust Indicators - Made Larger and More Prominent */}
           <div className="pt-16 grid grid-cols-3 gap-8 text-center opacity-95">
             <div className="space-y-4 hover:scale-105 transition-transform duration-300">
-              <div className="text-6xl font-bold text-[#caa75d] mb-3">99%</div>
-              <div className="text-2xl text-[#f0f0f0] font-medium">Конверсия</div>
+              <div className="text-7xl font-bold text-[#caa75d] mb-4">99%</div>
+              <div className="text-3xl text-[#f0f0f0] font-semibold">Конверсия</div>
             </div>
             <div className="space-y-4 hover:scale-105 transition-transform duration-300">
-              <div className="text-6xl font-bold text-[#caa75d] mb-3">24/7</div>
-              <div className="text-2xl text-[#f0f0f0] font-medium">Поддержка</div>
+              <div className="text-7xl font-bold text-[#caa75d] mb-4">24/7</div>
+              <div className="text-3xl text-[#f0f0f0] font-semibold">Поддержка</div>
             </div>
             <div className="space-y-4 hover:scale-105 transition-transform duration-300">
-              <div className="text-6xl font-bold text-[#caa75d] mb-3">API</div>
-              <div className="text-2xl text-[#f0f0f0] font-medium">Интеграция</div>
+              <div className="text-7xl font-bold text-[#caa75d] mb-4">API</div>
+              <div className="text-3xl text-[#f0f0f0] font-semibold">Интеграция</div>
             </div>
           </div>
         </div>
@@ -138,23 +144,23 @@ const Index = () => {
       <footer className="pb-8 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between space-y-4 sm:space-y-0">
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-8">
               <a 
                 href="mailto:Midas_P2P@proton.me"
-                className="flex items-center space-x-2 text-[#c0c0c0] hover:text-[#caa75d] transition-all duration-300 hover:scale-105"
+                className="flex items-center space-x-3 text-[#c0c0c0] hover:text-[#caa75d] transition-all duration-300 hover:scale-105"
               >
-                <Mail className="h-4 w-4" />
-                <span className="text-sm">Midas_P2P@proton.me</span>
+                <Mail className="h-6 w-6" />
+                <span className="text-lg font-medium">Midas_P2P@proton.me</span>
               </a>
               <a 
                 href="https://t.me/Midas_p2p"
-                className="flex items-center space-x-2 text-[#c0c0c0] hover:text-[#caa75d] transition-all duration-300 hover:scale-105"
+                className="flex items-center space-x-3 text-[#c0c0c0] hover:text-[#caa75d] transition-all duration-300 hover:scale-105"
               >
-                <Send className="h-4 w-4" />
-                <span className="text-sm">Midas_p2p</span>
+                <Send className="h-6 w-6" />
+                <span className="text-lg font-medium">Midas_p2p</span>
               </a>
             </div>
-            <div className="text-xs text-[#888] opacity-70">
+            <div className="text-sm text-[#888] opacity-70">
               *Оплата комиссий зависит от сложности кейса
             </div>
           </div>
