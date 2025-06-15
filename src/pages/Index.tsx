@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Crown, ArrowRight, Mail, Send, User } from "lucide-react";
+import { Crown, ArrowRight, Mail, Send } from "lucide-react";
 
 const Index = () => {
   return (
@@ -43,7 +43,7 @@ const Index = () => {
                 animationDuration: `${Math.random() * 2 + 2}s`,
                 '--direction': `${direction}deg`,
                 '--distance': `${Math.random() * 200 + 150}px`
-              } as React.CSSProperties}
+              } as React.CSSProperties & { '--direction': string; '--distance': string }}
             />
           );
         })}
@@ -52,10 +52,13 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020202]/30 to-[#020202]/70" />
       </div>
 
-      {/* Person with crown in top left */}
-      <div className="absolute top-6 left-6 z-10 flex items-center space-x-2">
-        <User className="h-12 w-12 text-[#caa75d]" />
-        <Crown className="h-8 w-8 text-[#caa75d]" />
+      {/* Golden man logo in top left */}
+      <div className="absolute top-6 left-6 z-10">
+        <img 
+          src="/lovable-uploads/a6825c7d-5a25-447e-994a-cefcab39e8b0.png" 
+          alt="Golden Man Logo" 
+          className="h-16 w-16 object-contain filter drop-shadow-2xl"
+        />
       </div>
 
       {/* Hero Section */}
@@ -71,8 +74,8 @@ const Index = () => {
                   alt="Midas Logo" 
                   className="h-40 w-40 object-contain filter drop-shadow-2xl"
                 />
-                <div className="relative">
-                  <Crown className="absolute -top-8 left-0 h-8 w-8 text-[#caa75d] z-10" />
+                <div className="relative flex justify-center">
+                  <Crown className="absolute -top-8 left-4 h-12 w-12 text-[#caa75d] z-10" />
                   <span className="text-6xl sm:text-7xl lg:text-8xl font-bold text-[#caa75d] font-inter tracking-tight">
                     Midas
                   </span>
@@ -149,15 +152,15 @@ const Index = () => {
                 href="mailto:Midas_P2P@proton.me"
                 className="flex items-center space-x-3 text-[#c0c0c0] hover:text-[#caa75d] transition-all duration-300 hover:scale-105"
               >
-                <Mail className="h-6 w-6" />
-                <span className="text-lg font-medium">Midas_P2P@proton.me</span>
+                <Mail className="h-8 w-8" />
+                <span className="text-2xl font-medium">Midas_P2P@proton.me</span>
               </a>
               <a 
                 href="https://t.me/Midas_p2p"
                 className="flex items-center space-x-3 text-[#c0c0c0] hover:text-[#caa75d] transition-all duration-300 hover:scale-105"
               >
-                <Send className="h-6 w-6" />
-                <span className="text-lg font-medium">Midas_p2p</span>
+                <Send className="h-8 w-8" />
+                <span className="text-2xl font-medium">Midas_p2p</span>
               </a>
             </div>
             <div className="text-sm text-[#888] opacity-70">
