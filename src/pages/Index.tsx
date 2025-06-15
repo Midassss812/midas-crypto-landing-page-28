@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Crown, ArrowRight, Mail, MessageCircle } from "lucide-react";
+import { Crown, ArrowRight, Mail, Telegram } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#f0f0f0] flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-[#050505] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       {/* Animated Starry Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="stars-container">
-          {[...Array(150)].map((_, i) => (
+          {[...Array(200)].map((_, i) => (
             <div
               key={i}
               className="star absolute rounded-full bg-white"
@@ -24,23 +24,24 @@ const Index = () => {
           ))}
         </div>
 
-        {/* Shooting stars */}
-        {[...Array(2)].map((_, i) => (
+        {/* More shooting stars from random positions */}
+        {[...Array(8)].map((_, i) => (
           <div
             key={`shooting-${i}`}
             className="shooting-star absolute h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-60"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 50}%`,
-              width: '80px',
-              animationDelay: `${Math.random() * 15 + 10}s`,
-              animationDuration: '2s'
+              left: `${Math.random() * 120 - 10}%`,
+              top: `${Math.random() * 80}%`,
+              width: '100px',
+              animationDelay: `${Math.random() * 20 + 5}s`,
+              animationDuration: `${Math.random() * 1.5 + 1.5}s`,
+              transform: `rotate(${Math.random() * 60 - 30}deg)`
             }}
           />
         ))}
 
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/30 to-[#0a0a0a]/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/30 to-[#050505]/70" />
       </div>
 
       {/* Crown in top left */}
@@ -53,7 +54,16 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-hero-entrance">
           {/* Midas Logo and Text */}
           <div className="space-y-6">
-            <div className="flex items-center justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            {/* Midas with logo */}
+            <div className="flex items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <img 
+                src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" 
+                alt="Midas Logo" 
+                className="h-16 w-16 object-contain"
+                style={{ 
+                  filter: 'brightness(0) saturate(100%) invert(85%) sepia(12%) saturate(1048%) hue-rotate(14deg) brightness(102%) contrast(88%)'
+                }}
+              />
               <span className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#f0f0f0] font-inter tracking-tight">
                 Midas
               </span>
@@ -75,29 +85,29 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+          {/* Action Buttons - Made Larger */}
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
             <Button
               size="lg"
-              className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold px-10 py-5 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
+              className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold px-14 py-7 text-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
               onClick={() => window.location.href = '/trader.html'}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 Стать трейдером
               </span>
-              <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="ml-3 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
 
             <Button
               size="lg"
               variant="outline"
-              className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold px-10 py-5 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
+              className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold px-14 py-7 text-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
               onClick={() => window.location.href = '/business.html'}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 Интеграция Midas
               </span>
-              <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="ml-3 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </div>
 
@@ -135,7 +145,7 @@ const Index = () => {
                 href="https://t.me/Midas_p2p"
                 className="flex items-center space-x-2 text-[#c0c0c0] hover:text-[#caa75d] transition-all duration-300 hover:scale-105"
               >
-                <MessageCircle className="h-4 w-4" />
+                <Telegram className="h-4 w-4" />
                 <span className="text-sm">Midas_p2p</span>
               </a>
             </div>
