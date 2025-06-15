@@ -1,9 +1,10 @@
+
 import { Button } from "@/components/ui/button";
-import { Crown, ArrowRight, Mail, Telegram } from "lucide-react";
+import { Crown, ArrowRight, Mail, Send } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#050505] text-[#f0f0f0] flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       {/* Animated Starry Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="stars-container">
@@ -25,7 +26,7 @@ const Index = () => {
         </div>
 
         {/* More shooting stars from random positions */}
-        {[...Array(8)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <div
             key={`shooting-${i}`}
             className="shooting-star absolute h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-60"
@@ -33,7 +34,7 @@ const Index = () => {
               left: `${Math.random() * 120 - 10}%`,
               top: `${Math.random() * 80}%`,
               width: '100px',
-              animationDelay: `${Math.random() * 20 + 5}s`,
+              animationDelay: `${Math.random() * 20 + 2}s`,
               animationDuration: `${Math.random() * 1.5 + 1.5}s`,
               transform: `rotate(${Math.random() * 60 - 30}deg)`
             }}
@@ -41,55 +42,52 @@ const Index = () => {
         ))}
 
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/30 to-[#050505]/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020202]/30 to-[#020202]/70" />
       </div>
 
       {/* Crown in top left */}
       <div className="absolute top-8 left-8 z-10">
-        <Crown className="h-8 w-8 text-[#caa75d] animate-fade-in" />
+        <Crown className="h-8 w-8 text-[#caa75d]" />
       </div>
 
       {/* Hero Section */}
       <main className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-hero-entrance">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Midas Logo and Text */}
           <div className="space-y-6">
             {/* Midas with logo */}
-            <div className="flex items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-center justify-center gap-4">
               <img 
                 src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" 
                 alt="Midas Logo" 
                 className="h-16 w-16 object-contain"
-                style={{ 
-                  filter: 'brightness(0) saturate(100%) invert(85%) sepia(12%) saturate(1048%) hue-rotate(14deg) brightness(102%) contrast(88%)'
-                }}
               />
               <span className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#f0f0f0] font-inter tracking-tight">
                 Midas
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#f0f0f0] leading-tight font-inter animate-text-reveal" style={{ animationDelay: '0.4s' }}>
-              <span className="inline-block animate-word-slide-up" style={{ animationDelay: '0.6s' }}>
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#f0f0f0] leading-tight font-inter">
+              <span className="inline-block">
                 Процессинг
               </span>{' '}
-              <span className="inline-block animate-word-slide-up" style={{ animationDelay: '0.8s' }}>
+              <span className="inline-block">
                 нового
               </span>{' '}
-              <span className="inline-block animate-word-slide-up text-[#caa75d]" style={{ animationDelay: '1s' }}>
+              <span className="inline-block text-[#caa75d]">
                 поколения
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl text-[#d0d0d0] max-w-3xl mx-auto font-light animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
+            <p className="text-xl sm:text-2xl text-[#d0d0d0] max-w-3xl mx-auto font-light">
               Платформа, где бизнес и трейдеры работают синхронно.
             </p>
           </div>
 
           {/* Action Buttons - Made Larger */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8">
             <Button
               size="lg"
-              className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold px-14 py-7 text-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
+              className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold px-16 py-8 text-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
               onClick={() => window.location.href = '/trader.html'}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -101,7 +99,7 @@ const Index = () => {
             <Button
               size="lg"
               variant="outline"
-              className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold px-14 py-7 text-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
+              className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold px-16 py-8 text-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
               onClick={() => window.location.href = '/business.html'}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -112,7 +110,7 @@ const Index = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="pt-16 grid grid-cols-3 gap-8 text-center opacity-90 animate-fade-in-up" style={{ animationDelay: '1.6s' }}>
+          <div className="pt-16 grid grid-cols-3 gap-8 text-center opacity-90">
             <div className="space-y-3 hover:scale-105 transition-transform duration-300">
               <div className="text-3xl font-bold text-[#caa75d]">99%</div>
               <div className="text-sm text-[#c0c0c0]">Конверсия</div>
@@ -132,7 +130,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="pb-8 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between space-y-4 sm:space-y-0 animate-fade-in-up" style={{ animationDelay: '1.8s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-6">
               <a 
                 href="mailto:Midas_P2P@proton.me"
@@ -145,7 +143,7 @@ const Index = () => {
                 href="https://t.me/Midas_p2p"
                 className="flex items-center space-x-2 text-[#c0c0c0] hover:text-[#caa75d] transition-all duration-300 hover:scale-105"
               >
-                <Telegram className="h-4 w-4" />
+                <Send className="h-4 w-4" />
                 <span className="text-sm">Midas_p2p</span>
               </a>
             </div>
