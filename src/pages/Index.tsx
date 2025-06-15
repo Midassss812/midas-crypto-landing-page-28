@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Crown, ArrowRight, Mail, MessageCircle } from "lucide-react";
 
@@ -24,7 +23,7 @@ const Index = () => {
             />
           ))}
         </div>
-        
+
         {/* Shooting stars */}
         {[...Array(2)].map((_, i) => (
           <div
@@ -39,7 +38,7 @@ const Index = () => {
             }}
           />
         ))}
-        
+
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/30 to-[#0a0a0a]/70" />
       </div>
@@ -54,18 +53,12 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-hero-entrance">
           {/* Midas Logo and Text */}
           <div className="space-y-6">
-            <div className="flex items-center justify-center space-x-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <img 
-                src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" 
-                alt="Midas King" 
-                className="h-12 w-12 object-contain transition-transform duration-500 hover:scale-110"
-                style={{ filter: 'brightness(0) invert(1)' }}
-              />
-              <span className="text-4xl font-bold text-[#f0f0f0] font-inter">
+            <div className="flex items-center justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <span className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#f0f0f0] font-inter tracking-tight">
                 Midas
               </span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#f0f0f0] leading-tight font-inter animate-text-reveal" style={{ animationDelay: '0.4s' }}>
               <span className="inline-block animate-word-slide-up" style={{ animationDelay: '0.6s' }}>
                 Процессинг
@@ -94,7 +87,7 @@ const Index = () => {
               </span>
               <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
-            
+
             <Button
               size="lg"
               variant="outline"
@@ -157,16 +150,16 @@ const Index = () => {
         .star {
           animation: gentle-twinkle infinite ease-in-out alternate;
         }
-        
+
         .shooting-star {
           animation: shooting infinite linear;
         }
-        
+
         @keyframes gentle-twinkle {
           0% { opacity: 0.3; }
           100% { opacity: 0.8; }
         }
-        
+
         @keyframes shooting {
           0% {
             transform: translateX(-100px) translateY(0px);
