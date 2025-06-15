@@ -25,21 +25,28 @@ const Index = () => {
           ))}
         </div>
 
-        {/* More shooting stars from random positions */}
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={`shooting-${i}`}
-            className="shooting-star absolute h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-60"
-            style={{
-              left: `${Math.random() * 120 - 10}%`,
-              top: `${Math.random() * 80}%`,
-              width: '100px',
-              animationDelay: `${Math.random() * 20 + 2}s`,
-              animationDuration: `${Math.random() * 1.5 + 1.5}s`,
-              transform: `rotate(${Math.random() * 60 - 30}deg)`
-            }}
-          />
-        ))}
+        {/* More shooting stars with random directions */}
+        {[...Array(25)].map((_, i) => {
+          const direction = Math.random() * 360; // Random direction in degrees
+          const startX = Math.random() * 120 - 10;
+          const startY = Math.random() * 120 - 10;
+          
+          return (
+            <div
+              key={`shooting-${i}`}
+              className="shooting-star absolute h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-70"
+              style={{
+                left: `${startX}%`,
+                top: `${startY}%`,
+                width: '120px',
+                animationDelay: `${Math.random() * 15 + 2}s`,
+                animationDuration: `${Math.random() * 2 + 2}s`,
+                '--direction': `${direction}deg`,
+                '--distance': `${Math.random() * 200 + 150}px`
+              }}
+            />
+          );
+        })}
 
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020202]/30 to-[#020202]/70" />
@@ -53,28 +60,28 @@ const Index = () => {
       {/* Hero Section */}
       <main className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Midas Logo and Text */}
+          {/* Midas Logo and Text - Centered */}
           <div className="space-y-6">
-            {/* Midas with logo */}
-            <div className="flex items-center justify-center gap-4">
+            {/* Midas with logo - Centered */}
+            <div className="flex items-center justify-center gap-6">
               <img 
                 src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" 
                 alt="Midas Logo" 
-                className="h-16 w-16 object-contain"
+                className="h-24 w-24 object-contain filter drop-shadow-lg"
               />
-              <span className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#f0f0f0] font-inter tracking-tight">
+              <span className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#caa75d] font-inter tracking-tight">
                 Midas
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#f0f0f0] leading-tight font-inter">
-              <span className="inline-block">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight font-inter">
+              <span className="inline-block text-[#f0f0f0]">
                 Процессинг
               </span>{' '}
-              <span className="inline-block">
+              <span className="inline-block text-[#f0f0f0]">
                 нового
               </span>{' '}
-              <span className="inline-block text-[#caa75d]">
+              <span className="inline-block text-[#f0f0f0]">
                 поколения
               </span>
             </h1>
@@ -87,41 +94,41 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8">
             <Button
               size="lg"
-              className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold px-16 py-8 text-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
+              className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold px-20 py-10 text-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
               onClick={() => window.location.href = '/trader.html'}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 Стать трейдером
               </span>
-              <ArrowRight className="ml-3 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="ml-3 h-7 w-7 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
 
             <Button
               size="lg"
               variant="outline"
-              className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold px-16 py-8 text-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
+              className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold px-20 py-10 text-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20"
               onClick={() => window.location.href = '/business.html'}
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 Интеграция Midas
               </span>
-              <ArrowRight className="ml-3 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="ml-3 h-7 w-7 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="pt-16 grid grid-cols-3 gap-8 text-center opacity-90">
-            <div className="space-y-3 hover:scale-105 transition-transform duration-300">
-              <div className="text-3xl font-bold text-[#caa75d]">99%</div>
-              <div className="text-sm text-[#c0c0c0]">Конверсия</div>
+          {/* Trust Indicators - Made Larger and More Prominent */}
+          <div className="pt-16 grid grid-cols-3 gap-8 text-center opacity-95">
+            <div className="space-y-4 hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-bold text-[#caa75d] mb-2">99%</div>
+              <div className="text-lg text-[#f0f0f0] font-medium">Конверсия</div>
             </div>
-            <div className="space-y-3 hover:scale-105 transition-transform duration-300">
-              <div className="text-3xl font-bold text-[#caa75d]">24/7</div>
-              <div className="text-sm text-[#c0c0c0]">Поддержка</div>
+            <div className="space-y-4 hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-bold text-[#caa75d] mb-2">24/7</div>
+              <div className="text-lg text-[#f0f0f0] font-medium">Поддержка</div>
             </div>
-            <div className="space-y-3 hover:scale-105 transition-transform duration-300">
-              <div className="text-3xl font-bold text-[#caa75d]">API</div>
-              <div className="text-sm text-[#c0c0c0]">Интеграция</div>
+            <div className="space-y-4 hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-bold text-[#caa75d] mb-2">API</div>
+              <div className="text-lg text-[#f0f0f0] font-medium">Интеграция</div>
             </div>
           </div>
         </div>
@@ -160,7 +167,7 @@ const Index = () => {
         }
 
         .shooting-star {
-          animation: shooting infinite linear;
+          animation: shooting-random infinite linear;
         }
 
         @keyframes gentle-twinkle {
@@ -168,19 +175,22 @@ const Index = () => {
           100% { opacity: 0.8; }
         }
 
-        @keyframes shooting {
+        @keyframes shooting-random {
           0% {
-            transform: translateX(-100px) translateY(0px);
+            transform: translateX(0) translateY(0) rotate(var(--direction));
             opacity: 0;
           }
           10% {
-            opacity: 0.6;
+            opacity: 0.8;
           }
           90% {
-            opacity: 0.6;
+            opacity: 0.8;
           }
           100% {
-            transform: translateX(calc(100vw + 100px)) translateY(80px);
+            transform: 
+              translateX(calc(cos(var(--direction)) * var(--distance))) 
+              translateY(calc(sin(var(--direction)) * var(--distance))) 
+              rotate(var(--direction));
             opacity: 0;
           }
         }
