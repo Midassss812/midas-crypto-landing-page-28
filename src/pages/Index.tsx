@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Send, TrendingUp, Shield, Zap, Users, BarChart3, Clock } from "lucide-react";
 
@@ -95,22 +94,12 @@ const Index = () => {
           <div className="lg:col-span-8 text-center space-y-8">
             {/* Title Section */}
             <div className="relative">
-              {/* Decorative bust image positioned to the side */}
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 hidden xl:block">
-                <img src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" alt="Midas Bust" className="h-20 object-contain opacity-80" />
-              </div>
-              
               {/* Centered title */}
               <div className="flex flex-col items-center space-y-4">
                 <span className="text-[#caa75d] text-5xl sm:text-6xl lg:text-7xl font-bold">Midas</span>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl text-white font-semibold max-w-4xl leading-tight">
                   Платформа, где бизнес и трейдеры работают синхронно.
                 </h1>
-              </div>
-              
-              {/* Decorative bust image for mobile */}
-              <div className="flex justify-center mt-4 xl:hidden">
-                <img src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" alt="Midas Bust" className="h-16 object-contain opacity-80" />
               </div>
             </div>
 
@@ -120,7 +109,7 @@ const Index = () => {
                 Стать трейдером
                 <ArrowRight className="ml-2" />
               </Button>
-              <Button size="lg" variant="outline" onClick={() => window.location.href = '/business.html'} className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl">
+              <Button size="lg" variant="outline" onClick={() => window.location.href = '/business.html'} className="group w-full sm:w-auto border-2 border-[#caa75d] text-black hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl">
                 Интеграция Midas
                 <ArrowRight className="ml-2" />
               </Button>
@@ -196,9 +185,6 @@ const Index = () => {
             <Send className="w-4 h-4" />
             Midas_p2p
           </a>
-        </div>
-        <div className="mt-2">
-          *Оплата комиссий зависит от сложности кейса
         </div>
       </footer>
     </div>;
