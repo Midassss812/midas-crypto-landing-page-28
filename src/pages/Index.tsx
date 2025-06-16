@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Send } from "lucide-react";
 const Index = () => {
@@ -63,14 +64,14 @@ const Index = () => {
 
       {/* Logo top-left */}
       <div className="absolute top-6 left-6 z-10">
-        <img src="/lovable-uploads/b87137c8-ee73-42ae-bd18-354ebdd6a26c.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
+        <img src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
       </div>
 
       {/* Main Section */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center text-center space-y-10 px-[28px] py-0">
         {/* Logo + Title */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          <img src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" alt="Midas Bust" className="h-20 sm:h-24 object-contain" />
+          <img src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" alt="Midas Bust" className="h-20 sm:h-24 object-contain" />
           <span className="text-[#caa75d] text-5xl font-bold mr-auto text-left\n">Midas</span>
         </div>
 
