@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Send } from "lucide-react";
 const Index = () => {
@@ -98,11 +97,11 @@ const Index = () => {
             <div className="text-sm">Конверсия</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-[#caa75d]">24/7</div>
+            <div className="text-4xl font-bold text-[#caa75d] px-[84px] py-[37px]">24/7</div>
             <div className="text-sm">Поддержка</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-[#caa75d]">API</div>
+            <div className="text-4xl font-bold text-[#caa75d] px-[84px] py-[37px]">API</div>
             <div className="text-sm">Интеграция</div>
           </div>
         </div>
