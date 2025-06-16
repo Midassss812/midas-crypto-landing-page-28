@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Send, TrendingUp, Shield, Zap, Users, BarChart3, Clock } from "lucide-react";
 
@@ -75,19 +74,13 @@ const Index = () => {
       {/* Main Section */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-8 max-w-7xl mx-auto w-full">
         {/* Grid Layout for better space utilization */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center min-h-[80vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 w-full items-center min-h-[80vh]">
           
           {/* Left Feature Panel */}
-          <div className="lg:col-span-2 hidden lg:flex flex-col space-y-6">
-            <div className="text-center p-4 border border-[#caa75d]/20 rounded-lg bg-[#caa75d]/5">
-              <TrendingUp className="w-8 h-8 text-[#caa75d] mx-auto mb-2" />
-              <h3 className="text-sm font-semibold text-[#caa75d]">Высокая доходность</h3>
-              <p className="text-xs text-gray-400 mt-1">Максимизируйте прибыль</p>
-            </div>
-            <div className="text-center p-4 border border-[#caa75d]/20 rounded-lg bg-[#caa75d]/5">
-              <Shield className="w-8 h-8 text-[#caa75d] mx-auto mb-2" />
-              <h3 className="text-sm font-semibold text-[#caa75d]">Безопасность</h3>
-              <p className="text-xs text-gray-400 mt-1">Защищенные транзакции</p>
+          <div className="lg:col-span-2 hidden lg:flex flex-col justify-center">
+            <div className="text-center p-3 border border-[#caa75d]/20 rounded-lg bg-[#caa75d]/5">
+              <Shield className="w-6 h-6 text-[#caa75d] mx-auto mb-1" />
+              <h3 className="text-xs font-semibold text-[#caa75d]">Безопасность</h3>
             </div>
           </div>
 
@@ -96,7 +89,7 @@ const Index = () => {
             {/* Title Section */}
             <div className="relative">
               {/* Decorative bust image positioned to the side */}
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 hidden xl:block">
+              <div className="absolute left-8 top-1/2 transform -translate-y-1/2 hidden xl:block">
                 <img src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" alt="Midas Bust" className="h-20 object-contain opacity-80" />
               </div>
               
@@ -120,7 +113,7 @@ const Index = () => {
                 Стать трейдером
                 <ArrowRight className="ml-2" />
               </Button>
-              <Button size="lg" variant="outline" onClick={() => window.location.href = '/business.html'} className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl">
+              <Button size="lg" variant="outline" onClick={() => window.location.href = '/business.html'} className="group w-full sm:w-auto border-2 border-[#caa75d] text-black hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl">
                 Интеграция Midas
                 <ArrowRight className="ml-2" />
               </Button>
@@ -150,16 +143,10 @@ const Index = () => {
           </div>
 
           {/* Right Feature Panel */}
-          <div className="lg:col-span-2 hidden lg:flex flex-col space-y-6">
-            <div className="text-center p-4 border border-[#caa75d]/20 rounded-lg bg-[#caa75d]/5">
-              <Zap className="w-8 h-8 text-[#caa75d] mx-auto mb-2" />
-              <h3 className="text-sm font-semibold text-[#caa75d]">Быстрые операции</h3>
-              <p className="text-xs text-gray-400 mt-1">Мгновенные транзакции</p>
-            </div>
-            <div className="text-center p-4 border border-[#caa75d]/20 rounded-lg bg-[#caa75d]/5">
-              <BarChart3 className="w-8 h-8 text-[#caa75d] mx-auto mb-2" />
-              <h3 className="text-sm font-semibold text-[#caa75d]">Аналитика</h3>
-              <p className="text-xs text-gray-400 mt-1">Детальная отчетность</p>
+          <div className="lg:col-span-2 hidden lg:flex flex-col justify-center">
+            <div className="text-center p-3 border border-[#caa75d]/20 rounded-lg bg-[#caa75d]/5">
+              <Zap className="w-6 h-6 text-[#caa75d] mx-auto mb-1" />
+              <h3 className="text-xs font-semibold text-[#caa75d]">Скорость</h3>
             </div>
           </div>
         </div>
