@@ -80,7 +80,7 @@ const Index = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
-          <Button size="lg" className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold px-10 py-6 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20" onClick={() => window.location.href = '/trader.html'}>
+          <Button size="lg" onClick={() => window.location.href = '/trader.html'} className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-[74px] py-[31px] text-xl">
             Стать трейдером
             <ArrowRight className="ml-2" />
           </Button>
