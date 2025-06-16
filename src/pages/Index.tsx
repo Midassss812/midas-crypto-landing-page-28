@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Send } from "lucide-react";
 const Index = () => {
@@ -15,44 +16,48 @@ const Index = () => {
           animationDuration: `${Math.random() * 2 + 3}s`
         }} />)}
 
-          {[...Array(30)].map((_, i) => {
-          const angle = Math.random() * Math.PI * 2;
-          const startX = Math.random() * 100;
-          const startY = Math.random() * 100;
-          const distance = Math.random() * 400 + 100;
-          const dx = Math.cos(angle) * distance;
-          const dy = Math.sin(angle) * distance;
-          return <div key={`shooting-${i}`} className="shooting-star absolute h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-60" style={{
-            left: `${startX}%`,
-            top: `${startY}%`,
-            width: `100px`,
-            transform: `translate(0, 0)`,
-            animation: `shooting-move-${i} ${Math.random() * 2 + 2}s linear infinite`
-          }} />;
+          {[...Array(15)].map((_, i) => {
+          const startX = Math.random() * 120 - 10; // Start from -10% to 110% for wider coverage
+          const startY = Math.random() * 20 - 30; // Start from above the screen (-30% to -10%)
+          const duration = Math.random() * 3 + 2; // 2-5 seconds duration
+          const delay = Math.random() * 8; // 0-8 seconds delay for staggered effect
+          
+          return <div 
+            key={`falling-star-${i}`} 
+            className="falling-star absolute bg-gradient-to-r from-transparent via-white to-transparent opacity-80" 
+            style={{
+              left: `${startX}%`,
+              top: `${startY}%`,
+              width: `120px`,
+              height: `2px`,
+              transform: `rotate(45deg)`,
+              transformOrigin: 'left center',
+              animation: `falling-star-${i} ${duration}s linear infinite`,
+              animationDelay: `${delay}s`
+            }} 
+          />;
         })}
         </div>
 
         <style>
           {Array.from({
-          length: 30
+          length: 15
         }, (_, i) => {
-          const angle = Math.random() * Math.PI * 2;
-          const dx = Math.cos(angle) * (Math.random() * 400 + 100);
-          const dy = Math.sin(angle) * (Math.random() * 400 + 100);
+          const distance = Math.random() * 400 + 300; // Distance to travel diagonally
           return `
-              @keyframes shooting-move-${i} {
+              @keyframes falling-star-${i} {
                 0% {
-                  transform: translate(0, 0);
+                  transform: rotate(45deg) translateX(0px);
                   opacity: 0;
                 }
-                5% {
+                10% {
                   opacity: 1;
                 }
-                95% {
+                90% {
                   opacity: 1;
                 }
                 100% {
-                  transform: translate(${dx}px, ${dy}px);
+                  transform: rotate(45deg) translateX(${distance}px);
                   opacity: 0;
                 }
               }
