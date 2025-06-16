@@ -109,10 +109,18 @@ const Index = () => {
             </Button>
           </div>
 
-          {/* Stats Section with increased spacing */}
+          {/* Stats Section with increased spacing and side tiles */}
           <div className="mt-20">
             <h2 className="text-xl text-[#caa75d] font-semibold mb-12">Почему выбирают Midas</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto items-center">
+              {/* Left side tile */}
+              <div className="hidden lg:block text-center p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
+                <Shield className="w-8 h-8 text-[#caa75d] mx-auto mb-3" />
+                <div className="text-lg font-medium text-[#caa75d] mb-2">Безопасность</div>
+                <div className="text-xs text-gray-400">Надежная защита данных</div>
+              </div>
+
+              {/* Main statistics */}
               <div className="text-center p-8 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
                 <div className="text-5xl font-bold text-[#caa75d] mb-4">99%</div>
                 <div className="text-xl font-medium text-white mb-3">Конверсия</div>
@@ -127,6 +135,13 @@ const Index = () => {
                 <div className="text-5xl font-bold text-[#caa75d] mb-4">API</div>
                 <div className="text-xl font-medium text-white mb-3">Интеграция</div>
                 <div className="text-sm text-gray-400">Простая интеграция с вашим бизнесом</div>
+              </div>
+
+              {/* Right side tile */}
+              <div className="hidden lg:block text-center p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
+                <Zap className="w-8 h-8 text-[#caa75d] mx-auto mb-3" />
+                <div className="text-lg font-medium text-[#caa75d] mb-2">Скорость</div>
+                <div className="text-xs text-gray-400">Мгновенные транзакции</div>
               </div>
             </div>
           </div>
