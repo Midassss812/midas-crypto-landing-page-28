@@ -1,10 +1,73 @@
+// исправленный Index.tsx
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Send, TrendingUp, Shield, Zap, BarChart3 } from "lucide-react";
+import {
+  ArrowRight,
+  Mail,
+  Send,
+  TrendingUp,
+  Shield,
+  Zap,
+  BarChart3
+} from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
-      {/* Logo Top-Left */}
+      {/* Falling Stars Background */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="stars-container">
+          {[...Array(300)].map((_, i) => (
+            <div
+              key={i}
+              className="star absolute rounded-full bg-white"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                width: `${Math.random() * 2 + 0.5}px`,
+                height: `${Math.random() * 2 + 0.5}px`,
+                opacity: Math.random() * 0.8 + 0.2,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${Math.random() * 2 + 3}s`
+              }}
+            />
+          ))}
+          {[...Array(15)].map((_, i) => {
+            const startX = Math.random() * 120 - 10;
+            const startY = Math.random() * 20 - 30;
+            const duration = Math.random() * 3 + 2;
+            const delay = Math.random() * 8;
+            return (
+              <div
+                key={`falling-star-${i}`}
+                className="falling-star absolute bg-gradient-to-r from-transparent via-white to-transparent opacity-80"
+                style={{
+                  left: `${startX}%`,
+                  top: `${startY}%`,
+                  width: `120px`,
+                  height: `2px`,
+                  transform: `rotate(45deg)`,
+                  transformOrigin: "left center",
+                  animation: `falling-star-${i} ${duration}s linear infinite`,
+                  animationDelay: `${delay}s`
+                }}
+              />
+            );
+          })}
+        </div>
+        <style>
+          {Array.from({ length: 15 }, (_, i) => {
+            const distance = Math.random() * 400 + 300;
+            return `@keyframes falling-star-${i} {
+              0% { transform: rotate(45deg) translateX(0px); opacity: 0; }
+              10% { opacity: 1; }
+              90% { opacity: 1; }
+              100% { transform: rotate(45deg) translateX(${distance}px); opacity: 0; }
+            }`;
+          }).join("\n")}
+        </style>
+      </div>
+
+      {/* Logo top-left */}
       <div className="absolute top-6 left-6 z-10">
         <img
           src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png"
@@ -15,28 +78,23 @@ const Index = () => {
 
       {/* Main Section */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-8 max-w-7xl mx-auto w-full">
-        {/* Central Content */}
-        <div className="text-center space-y-8">
-          {/* Title Section */}
-          <div className="flex flex-col items-center space-y-4 relative">
-            {/* Decorative bust */}
+        <div className="flex flex-col items-center space-y-6 text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <img
               src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png"
               alt="Midas Bust"
-              className="h-20 sm:h-24 object-contain opacity-90 mb-2"
+              className="h-24 object-contain opacity-90"
             />
-            <span className="text-[#caa75d] text-5xl sm:text-6xl lg:text-7xl font-bold">Midas</span>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl text-white font-semibold max-w-4xl leading-tight">
-              Платформа, где бизнес и трейдеры работают синхронно.
-            </h1>
+            <span className="text-[#caa75d] text-6xl font-bold">Midas</span>
           </div>
-
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <h1 className="text-2xl sm:text-3xl text-white font-semibold max-w-3xl">
+            Платформа, где бизнес и трейдеры работают синхронно.
+          </h1>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
             <Button
               size="lg"
               onClick={() => (window.location.href = "/trader.html")}
-              className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl"
+              className="bg-[#caa75d] hover:bg-[#b8965a] text-black font-semibold px-8 py-4 text-xl"
             >
               Стать трейдером
               <ArrowRight className="ml-2" />
@@ -45,31 +103,39 @@ const Index = () => {
               size="lg"
               variant="outline"
               onClick={() => (window.location.href = "/business.html")}
-              className="group w-full sm:w-auto bg-white border-2 border-[#caa75d] text-black hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl"
+              className="border-2 border-[#caa75d] text-black bg-white hover:bg-[#f7f7f7] font-semibold px-8 py-4 text-xl"
             >
               Интеграция Midas
               <ArrowRight className="ml-2" />
             </Button>
           </div>
+        </div>
 
-          {/* Stats */}
-          <div className="mt-12">
-            <h2 className="text-xl text-[#caa75d] font-semibold mb-8">Почему выбирают Midas</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <div className="text-center p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
-                <div className="text-5xl font-bold text-[#caa75d] mb-3">99%</div>
-                <div className="text-xl font-medium text-white mb-2">Конверсия</div>
-                <div className="text-sm text-gray-400">Высокий процент успешных сделок</div>
+        {/* Stats Section */}
+        <div className="mt-16 text-center">
+          <h2 className="text-xl text-[#caa75d] font-semibold mb-8">
+            Почему выбирают Midas
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5">
+              <div className="text-4xl font-bold text-[#caa75d] mb-2">99%</div>
+              <div className="text-white font-medium mb-1">Конверсия</div>
+              <div className="text-sm text-gray-400">
+                Высокий процент успешных сделок
               </div>
-              <div className="text-center p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
-                <div className="text-5xl font-bold text-[#caa75d] mb-3">24/7</div>
-                <div className="text-xl font-medium text-white mb-2">Поддержка</div>
-                <div className="text-sm text-gray-400">Круглосуточная техническая поддержка</div>
+            </div>
+            <div className="p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5">
+              <div className="text-4xl font-bold text-[#caa75d] mb-2">24/7</div>
+              <div className="text-white font-medium mb-1">Поддержка</div>
+              <div className="text-sm text-gray-400">
+                Круглосуточная техническая поддержка
               </div>
-              <div className="text-center p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
-                <div className="text-5xl font-bold text-[#caa75d] mb-3">API</div>
-                <div className="text-xl font-medium text-white mb-2">Интеграция</div>
-                <div className="text-sm text-gray-400">Простая интеграция с вашим бизнесом</div>
+            </div>
+            <div className="p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5">
+              <div className="text-4xl font-bold text-[#caa75d] mb-2">API</div>
+              <div className="text-white font-medium mb-1">Интеграция</div>
+              <div className="text-sm text-gray-400">
+                Простая интеграция с вашим бизнесом
               </div>
             </div>
           </div>
@@ -94,7 +160,9 @@ const Index = () => {
             Midas_p2p
           </a>
         </div>
-        <div className="mt-2">*Оплата комиссий зависит от сложности кейса</div>
+        <div className="mt-2">
+          *Оплата комиссий зависит от сложности кейса
+        </div>
       </footer>
     </div>
   );
