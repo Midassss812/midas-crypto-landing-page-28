@@ -67,14 +67,14 @@ const Index = () => {
       </div>
 
       {/* Main Section */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center text-center space-y-10 px-[28px]">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center text-center space-y-10 px-[28px] py-0">
         {/* Logo + Title */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           <img src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" alt="Midas Bust" className="h-20 sm:h-24 object-contain" />
-          <span className="text-5xl sm:text-6xl font-bold text-[#caa75d]">Midas</span>
+          <span className="text-[#caa75d] text-7xl font-bold text-center mx-auto\n\n">Midas</span>
         </div>
 
-        <h1 className="text-2xl sm:text-4xl text-white font-semibold">
+        <h1 className="text-2xl text-white font-semibold sm:text-3xl px-0 py-0">
           Платформа, где бизнес и трейдеры работают синхронно.
         </h1>
 
@@ -84,7 +84,7 @@ const Index = () => {
             Стать трейдером
             <ArrowRight className="ml-2" />
           </Button>
-          <Button size="lg" variant="outline" className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold px-10 py-6 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20" onClick={() => window.location.href = '/business.html'}>
+          <Button size="lg" variant="outline" onClick={() => window.location.href = '/business.html'} className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-[74px] py-[31px] text-xl">
             Интеграция Midas
             <ArrowRight className="ml-2" />
           </Button>
@@ -93,7 +93,7 @@ const Index = () => {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-4 pt-10">
           <div className="text-center">
-            <div className="text-4xl font-bold text-[#caa75d]">99%</div>
+            <div className="text-4xl font-bold text-[#caa75d] px-[84px] py-[37px] rounded-2xl">99%</div>
             <div className="text-sm">Конверсия</div>
           </div>
           <div className="text-center">
