@@ -71,7 +71,7 @@ const Index = () => {
         {/* Logo + Title */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           <img src="/lovable-uploads/a465ef4a-8571-45f3-bc84-589af7eed350.png" alt="Midas Bust" className="h-20 sm:h-24 object-contain" />
-          <span className="text-[#caa75d] text-7xl font-bold text-center mx-auto\n\n">Midas</span>
+          <span className="text-[#caa75d] text-5xl font-bold mr-auto text-left\n">Midas</span>
         </div>
 
         <h1 className="text-2xl text-white font-semibold sm:text-3xl px-0 py-0">
