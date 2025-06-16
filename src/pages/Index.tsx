@@ -97,30 +97,39 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Buttons with increased spacing */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            <Button size="lg" onClick={() => window.location.href = '/trader.html'} className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl">
-              Стать трейдером
-              <ArrowRight className="ml-2" />
-            </Button>
-            <Button size="lg" variant="outline" onClick={() => window.location.href = '/business.html'} className="group w-full sm:w-auto border-2 border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl">
-              Интеграция Midas
-              <ArrowRight className="ml-2" />
-            </Button>
+          {/* Buttons with side tiles */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center items-center max-w-6xl mx-auto">
+            {/* Left side tile - Hidden on mobile */}
+            <div className="hidden lg:block text-center p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
+              <Shield className="w-8 h-8 text-[#caa75d] mx-auto mb-3" />
+              <div className="text-lg font-medium text-[#caa75d] mb-2">Безопасность</div>
+              <div className="text-xs text-gray-400">Надежная защита данных</div>
+            </div>
+
+            {/* Buttons section */}
+            <div className="flex flex-col gap-8 justify-center items-center">
+              <Button size="lg" onClick={() => window.location.href = '/trader.html'} className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl">
+                Стать трейдером
+                <ArrowRight className="ml-2" />
+              </Button>
+              <Button size="lg" variant="outline" onClick={() => window.location.href = '/business.html'} className="group w-full sm:w-auto border-2 border-[#caa75d] text-black hover:bg-[#caa75d] hover:text-black font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl">
+                Интеграция Midas
+                <ArrowRight className="ml-2" />
+              </Button>
+            </div>
+
+            {/* Right side tile - Hidden on mobile */}
+            <div className="hidden lg:block text-center p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
+              <Zap className="w-8 h-8 text-[#caa75d] mx-auto mb-3" />
+              <div className="text-lg font-medium text-[#caa75d] mb-2">Скорость</div>
+              <div className="text-xs text-gray-400">Мгновенные транзакции</div>
+            </div>
           </div>
 
-          {/* Stats Section with increased spacing and side tiles */}
+          {/* Stats Section - simplified back to 3 columns */}
           <div className="mt-20">
             <h2 className="text-xl text-[#caa75d] font-semibold mb-12">Почему выбирают Midas</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto items-center">
-              {/* Left side tile */}
-              <div className="hidden lg:block text-center p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
-                <Shield className="w-8 h-8 text-[#caa75d] mx-auto mb-3" />
-                <div className="text-lg font-medium text-[#caa75d] mb-2">Безопасность</div>
-                <div className="text-xs text-gray-400">Надежная защита данных</div>
-              </div>
-
-              {/* Main statistics */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 max-w-5xl mx-auto">
               <div className="text-center p-8 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
                 <div className="text-5xl font-bold text-[#caa75d] mb-4">99%</div>
                 <div className="text-xl font-medium text-white mb-3">Конверсия</div>
@@ -135,13 +144,6 @@ const Index = () => {
                 <div className="text-5xl font-bold text-[#caa75d] mb-4">API</div>
                 <div className="text-xl font-medium text-white mb-3">Интеграция</div>
                 <div className="text-sm text-gray-400">Простая интеграция с вашим бизнесом</div>
-              </div>
-
-              {/* Right side tile */}
-              <div className="hidden lg:block text-center p-6 border border-[#caa75d]/20 rounded-xl bg-[#caa75d]/5 hover:bg-[#caa75d]/10 transition-colors">
-                <Zap className="w-8 h-8 text-[#caa75d] mx-auto mb-3" />
-                <div className="text-lg font-medium text-[#caa75d] mb-2">Скорость</div>
-                <div className="text-xs text-gray-400">Мгновенные транзакции</div>
               </div>
             </div>
           </div>
