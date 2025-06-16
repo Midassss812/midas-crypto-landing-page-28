@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Send } from "lucide-react";
 const Index = () => {
@@ -72,16 +73,27 @@ const Index = () => {
       </div>
 
       {/* Main Section */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center text-center space-y-10 px-[28px] py-0">
-        {/* Logo + Title */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          <img src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" alt="Midas Bust" className="h-20 sm:h-24 object-contain" />
-          <span className="text-[#caa75d] text-5xl font-bold mr-auto text-left\n">Midas</span>
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center text-center space-y-8 px-6 py-0">
+        {/* Title Section - restructured */}
+        <div className="relative w-full max-w-4xl">
+          {/* Decorative bust image positioned to the side */}
+          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 hidden lg:block">
+            <img src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" alt="Midas Bust" className="h-20 object-contain opacity-80" />
+          </div>
+          
+          {/* Centered title */}
+          <div className="flex flex-col items-center space-y-4">
+            <span className="text-[#caa75d] text-5xl sm:text-6xl font-bold">Midas</span>
+            <h1 className="text-2xl sm:text-3xl text-white font-semibold max-w-2xl">
+              Платформа, где бизнес и трейдеры работают синхронно.
+            </h1>
+          </div>
+          
+          {/* Decorative bust image for mobile */}
+          <div className="flex justify-center mt-4 lg:hidden">
+            <img src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" alt="Midas Bust" className="h-16 object-contain opacity-80" />
+          </div>
         </div>
-
-        <h1 className="text-2xl text-white font-semibold sm:text-3xl px-0 py-0">
-          Платформа, где бизнес и трейдеры работают синхронно.
-        </h1>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
@@ -96,24 +108,24 @@ const Index = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 pt-10">
+        <div className="grid grid-cols-3 gap-6 pt-8">
           <div className="text-center">
-            <div className="text-4xl font-bold text-[#caa75d] px-[84px] py-[37px] rounded-2xl">99%</div>
-            <div className="text-sm">Конверсия</div>
+            <div className="text-4xl font-bold text-[#caa75d] mb-2">99%</div>
+            <div className="text-lg font-medium">Конверсия</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-[#caa75d] px-[84px] py-[37px]">24/7</div>
-            <div className="text-sm">Поддержка</div>
+            <div className="text-4xl font-bold text-[#caa75d] mb-2">24/7</div>
+            <div className="text-lg font-medium">Поддержка</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-[#caa75d] px-[84px] py-[37px]">API</div>
-            <div className="text-sm">Интеграция</div>
+            <div className="text-4xl font-bold text-[#caa75d] mb-2">API</div>
+            <div className="text-lg font-medium">Интеграция</div>
           </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 pb-8 text-center text-sm text-[#888] opacity-70 mt-auto">
+      <footer className="relative z-10 pb-8 text-center text-sm text-[#888] opacity-70 mt-auto px-6">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-[#c0c0c0]">
           <a href="mailto:Midas_P2P@proton.me" className="flex items-center gap-2 hover:text-[#caa75d]">
             <Mail className="w-4 h-4" />
@@ -131,3 +143,4 @@ const Index = () => {
     </div>;
 };
 export default Index;
+
