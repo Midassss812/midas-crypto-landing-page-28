@@ -3,62 +3,72 @@ import React from 'react';
 import { CreditCard, Monitor, Check, DollarSign, User } from "lucide-react";
 
 const HowItWorks = () => {
+  const steps = [
+    {
+      icon: CreditCard,
+      title: "Банковская карта",
+      description: "Клиент использует свою карту"
+    },
+    {
+      icon: User,
+      title: "Запрос реквизитов",
+      description: "Клиент запрашивает реквизиты для оплаты"
+    },
+    {
+      icon: Monitor,
+      title: "Обработка платежа",
+      description: "Midas принимает и обрабатывает платеж"
+    },
+    {
+      icon: Check,
+      title: "Подтверждение",
+      description: "Успешное завершение операции"
+    },
+    {
+      icon: DollarSign,
+      title: "Зачисление",
+      description: "Доллары поступают на баланс"
+    }
+  ];
+
   return (
     <section className="mb-16">
-      <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">Как это работает</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 text-[#caa75d]">Как это работает</h2>
       
-      {/* Slide Image */}
-      <div className="flex justify-center mb-8">
-        <img 
-          src="/lovable-uploads/fc3579e1-328a-4c97-971e-77b1e8c4d58d.png" 
-          alt="Как это работает схема" 
-          className="max-w-full h-auto max-h-96 object-contain rounded-lg"
-        />
-      </div>
-
-      {/* Icons below the image - perfectly aligned horizontally */}
-      <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto overflow-x-auto">
-        <div className="text-center flex-shrink-0">
-          <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-4">
-            <CreditCard className="w-8 h-8 text-[#020202]" />
-          </div>
-          <p className="text-gray-300 text-sm whitespace-nowrap">Банковская карта</p>
-        </div>
-        
-        <div className="hidden sm:block text-[#caa75d] text-2xl flex-shrink-0">→</div>
-        
-        <div className="text-center flex-shrink-0">
-          <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-4">
-            <User className="w-8 h-8 text-[#020202]" />
-          </div>
-          <p className="text-gray-300 text-sm whitespace-nowrap">Клиент запрашивает<br />реквизит</p>
-        </div>
-        
-        <div className="hidden sm:block text-[#caa75d] text-2xl flex-shrink-0">→</div>
-        
-        <div className="text-center flex-shrink-0">
-          <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-4">
-            <Monitor className="w-8 h-8 text-[#020202]" />
-          </div>
-          <p className="text-gray-300 text-sm whitespace-nowrap">Midas принимает<br />платеж</p>
-        </div>
-        
-        <div className="hidden sm:block text-[#caa75d] text-2xl flex-shrink-0">→</div>
-        
-        <div className="text-center flex-shrink-0">
-          <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-4">
-            <Check className="w-8 h-8 text-[#020202]" />
-          </div>
-          <p className="text-gray-300 text-sm whitespace-nowrap">Успешный<br />платеж</p>
-        </div>
-        
-        <div className="hidden sm:block text-[#caa75d] text-2xl flex-shrink-0">→</div>
-        
-        <div className="text-center flex-shrink-0">
-          <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-4">
-            <DollarSign className="w-8 h-8 text-[#020202]" />
-          </div>
-          <p className="text-gray-300 text-sm whitespace-nowrap">Доллары на<br />балансе</p>
+      {/* Elegant flow visualization */}
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
+          {steps.map((step, index) => {
+            const IconComponent = step.icon;
+            return (
+              <div key={index} className="flex flex-col items-center text-center flex-1">
+                {/* Icon container with enhanced styling */}
+                <div className="relative">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#caa75d] to-[#b8965a] rounded-full flex items-center justify-center mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <IconComponent className="w-10 h-10 text-[#020202]" />
+                  </div>
+                  {/* Connection line for desktop */}
+                  {index < steps.length - 1 && (
+                    <div className="hidden lg:block absolute top-10 left-20 w-16 xl:w-24 h-0.5 bg-gradient-to-r from-[#caa75d] to-transparent"></div>
+                  )}
+                </div>
+                
+                {/* Step content */}
+                <div className="max-w-xs">
+                  <h3 className="text-white font-semibold text-lg mb-2">{step.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
+                </div>
+                
+                {/* Mobile connection arrow */}
+                {index < steps.length - 1 && (
+                  <div className="lg:hidden mt-6 mb-2">
+                    <div className="w-px h-8 bg-gradient-to-b from-[#caa75d] to-transparent mx-auto"></div>
+                    <div className="text-[#caa75d] text-xl">↓</div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
