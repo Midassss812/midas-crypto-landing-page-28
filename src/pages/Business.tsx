@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Shield, Zap, Clock, Globe, HeadphonesIcon, CheckCircle, Mail, MessageCircle } from "lucide-react";
+import { Shield, Zap, Clock, Globe, HeadphonesIcon, CheckCircle, Mail, MessageCircle, CreditCard, Monitor, Check, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import StarBackground from '@/components/StarBackground';
@@ -14,13 +14,12 @@ const Business = () => {
     { icon: HeadphonesIcon, title: "Круглосуточная поддержка", description: "Квалифицированная техподдержка" }
   ];
 
-  const features = [
-    { icon: Zap, title: "Высокая скорость", description: "Мгновенная обработка транзакций" },
-    { icon: Shield, title: "Максимальная безопасность", description: "Защищенные протоколы передачи данных" },
-    { icon: Globe, title: "Широкая география", description: "Поддержка РФ, КЗ, ТЖ, УЗ" }
+  const geographyData = [
+    { country: "RF", percentage: "80%" },
+    { country: "KZ", percentage: "35%" },
+    { country: "TJ", percentage: "20%" },
+    { country: "UZ", percentage: "20%" }
   ];
-
-  const countries = ["РФ", "КЗ", "ТЖ", "УЗ"];
 
   return (
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
@@ -35,14 +34,19 @@ const Business = () => {
       <main className="relative z-10 flex-1 px-4 py-8 max-w-6xl mx-auto w-full">
         
         {/* Hero Section */}
-        <div className="text-center space-y-6 mb-16 pt-20">
-          <span className="text-[#caa75d] text-4xl sm:text-5xl lg:text-6xl font-bold">Midas Business</span>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl text-white font-semibold max-w-4xl mx-auto leading-tight">
-            Процессинговая платформа нового поколения для вашего бизнеса
-          </h1>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Инфраструктура для быстрого, выгодного и безопасного приема платежей
-          </p>
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-16 pt-20">
+          <div className="lg:w-1/2 text-center lg:text-left space-y-6">
+            <span className="text-[#caa75d] text-4xl sm:text-5xl lg:text-6xl font-bold">Midas</span>
+            <h1 className="text-xl sm:text-2xl lg:text-3xl text-white font-semibold leading-tight">
+              Процессинговая платформа нового поколения
+            </h1>
+            <p className="text-lg text-gray-300 max-w-2xl">
+              Инфраструктура для бизнеса, которому важно быстро, выгодно, безопасно принимать оплату от клиентов
+            </p>
+          </div>
+          <div className="lg:w-1/2 flex justify-center">
+            <img src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" alt="Midas King" className="max-w-full h-auto max-h-96 object-contain" />
+          </div>
         </div>
 
         {/* How it works */}
@@ -51,26 +55,18 @@ const Business = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-[#020202] font-bold text-xl">1</span>
+                <CreditCard className="w-8 h-8 text-[#020202]" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Клиент</h3>
-              <p className="text-gray-300">Инициирует платеж</p>
+              <p className="text-gray-300">Запрашивает реквизит</p>
             </div>
             <div className="hidden md:block text-[#caa75d] text-2xl">→</div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-[#020202] font-bold text-xl">2</span>
+                <Monitor className="w-8 h-8 text-[#020202]" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Реквизит</h3>
-              <p className="text-gray-300">Получает данные</p>
-            </div>
-            <div className="hidden md:block text-[#caa75d] text-2xl">→</div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-[#020202] font-bold text-xl">3</span>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Платеж</h3>
-              <p className="text-gray-300">Успешно выполнен</p>
+              <h3 className="text-lg font-semibold mb-2">Midas</h3>
+              <p className="text-gray-300">Принимает платеж</p>
             </div>
           </div>
         </section>
@@ -95,55 +91,82 @@ const Business = () => {
           </div>
         </section>
 
-        {/* Features */}
+        {/* Geography Services */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">Возможности платформы</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
+          <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">География оказания услуг</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {geographyData.map((item, index) => (
               <Card key={index} className="bg-[#1a1a1a] border-[#333] hover:border-[#caa75d] transition-colors text-center">
-                <CardHeader>
-                  <feature.icon className="w-12 h-12 text-[#caa75d] mx-auto mb-4" />
-                  <CardTitle className="text-white">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-300">{feature.description}</p>
+                <CardContent className="p-6">
+                  <div className="text-[#caa75d] font-bold text-2xl mb-2">{item.country}</div>
+                  <div className="text-white text-xl font-semibold">{item.percentage}</div>
                 </CardContent>
               </Card>
             ))}
           </div>
         </section>
 
-        {/* Geography */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">География услуг</h2>
-          <div className="flex justify-center gap-4 flex-wrap">
-            {countries.map((country, index) => (
-              <div key={index} className="bg-[#1a1a1a] border border-[#333] rounded-lg px-6 py-4">
-                <span className="text-[#caa75d] font-bold text-xl">{country}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* API Integration */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">Простая интеграция</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">API интеграция</h2>
+          
+          {/* API Flow */}
+          <div className="mb-8">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-5xl mx-auto mb-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-2">
+                  <CreditCard className="w-8 h-8 text-[#020202]" />
+                </div>
+                <span className="text-sm text-gray-300">Клиент</span>
+              </div>
+              <div className="hidden md:block text-[#caa75d]">→</div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-2">
+                  <DollarSign className="w-8 h-8 text-[#020202]" />
+                </div>
+                <span className="text-sm text-gray-300">Пополнить</span>
+              </div>
+              <div className="hidden md:block text-[#caa75d]">→</div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Monitor className="w-8 h-8 text-[#020202]" />
+                </div>
+                <span className="text-sm text-gray-300">API Реквизиты</span>
+              </div>
+              <div className="hidden md:block text-[#caa75d]">→</div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Globe className="w-8 h-8 text-[#020202]" />
+                </div>
+                <span className="text-sm text-gray-300">Баланс</span>
+              </div>
+              <div className="hidden md:block text-[#caa75d]">→</div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-[#caa75d] rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Check className="w-8 h-8 text-[#020202]" />
+                </div>
+                <span className="text-sm text-gray-300">Успешно</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Integration Steps */}
           <Card className="bg-[#1a1a1a] border-[#333] max-w-2xl mx-auto">
             <CardHeader>
-              <CardTitle className="text-white text-center">API подключение за 3 шага</CardTitle>
+              <CardTitle className="text-white text-center">3 шага до запуска платежей</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center gap-3">
                 <span className="bg-[#caa75d] text-[#020202] rounded-full w-8 h-8 flex items-center justify-center font-bold">1</span>
-                <span className="text-gray-300">Получите API ключи</span>
+                <span className="text-gray-300">Заявка</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="bg-[#caa75d] text-[#020202] rounded-full w-8 h-8 flex items-center justify-center font-bold">2</span>
-                <span className="text-gray-300">Интегрируйте в вашу систему</span>
+                <span className="text-gray-300">Онбординг</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="bg-[#caa75d] text-[#020202] rounded-full w-8 h-8 flex items-center justify-center font-bold">3</span>
-                <span className="text-gray-300">Начните принимать платежи</span>
+                <span className="text-gray-300">Запуск платежей</span>
               </div>
             </CardContent>
           </Card>
@@ -175,6 +198,10 @@ const Business = () => {
               Telegram: Midas_p2p
             </Button>
           </div>
+          
+          <p className="text-sm text-gray-400 italic mt-4">
+            *Оплата комиссии зависит от сложности кейса
+          </p>
         </section>
 
       </main>
