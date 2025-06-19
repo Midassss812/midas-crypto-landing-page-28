@@ -1,8 +1,45 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Send, TrendingUp, Shield, Zap, Users, BarChart3, Clock } from "lucide-react";
 
 const Index = () => {
+  // Generate star parameters once to sync between elements and keyframes
+  const starParams = [...Array(4)].map((_, i) => {
+    const side = Math.floor(Math.random() * 3); // 0: top, 1: left, 2: right
+    let startX, startY, rotation, deltaX, deltaY;
+    
+    if (side === 0) { // From top
+      startX = Math.random() * 120 - 10;
+      startY = Math.random() * 20 - 30;
+      rotation = Math.random() * 30 + 30; // 30-60 degrees
+      deltaX = (Math.random() * 200 + 150) * (Math.random() > 0.5 ? 1 : -1);
+      deltaY = Math.random() * 400 + 300;
+    } else if (side === 1) { // From left
+      startX = Math.random() * 20 - 30;
+      startY = Math.random() * 80 + 10;
+      rotation = Math.random() * 45 + 10; // 10-55 degrees
+      deltaX = Math.random() * 400 + 300;
+      deltaY = Math.random() * 200 + 100;
+    } else { // From right
+      startX = Math.random() * 20 + 110;
+      startY = Math.random() * 80 + 10;
+      rotation = Math.random() * 45 + 125; // 125-170 degrees
+      deltaX = -(Math.random() * 400 + 300);
+      deltaY = Math.random() * 200 + 100;
+    }
+    
+    return {
+      startX,
+      startY,
+      rotation,
+      deltaX,
+      deltaY,
+      duration: Math.random() * 4 + 3, // 3-7 seconds
+      delay: Math.random() * 20, // 0-20 seconds for much rarer appearance
+      width: Math.random() * 60 + 80,
+      height: Math.random() * 1 + 1.5
+    };
+  });
+
   return <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       {/* Star Background */}
       <div className="absolute inset-0 overflow-hidden z-0">
@@ -17,74 +54,30 @@ const Index = () => {
           animationDuration: `${Math.random() * 2 + 3}s`
         }} />)}
 
-          {[...Array(4)].map((_, i) => {
-          // Random starting positions from different sides
-          const side = Math.floor(Math.random() * 3); // 0: top, 1: left, 2: right
-          let startX, startY, rotation, endX, endY;
-          
-          if (side === 0) { // From top
-            startX = Math.random() * 120 - 10;
-            startY = Math.random() * 20 - 30;
-            rotation = Math.random() * 30 + 30; // 30-60 degrees
-            endX = startX + (Math.random() * 200 + 150) * (Math.random() > 0.5 ? 1 : -1);
-            endY = startY + Math.random() * 400 + 300;
-          } else if (side === 1) { // From left
-            startX = Math.random() * 20 - 30;
-            startY = Math.random() * 80 + 10;
-            rotation = Math.random() * 45 + 10; // 10-55 degrees
-            endX = startX + Math.random() * 400 + 300;
-            endY = startY + Math.random() * 200 + 100;
-          } else { // From right
-            startX = Math.random() * 20 + 110;
-            startY = Math.random() * 80 + 10;
-            rotation = Math.random() * 45 + 125; // 125-170 degrees
-            endX = startX - (Math.random() * 400 + 300);
-            endY = startY + Math.random() * 200 + 100;
-          }
-          
-          const duration = Math.random() * 4 + 3; // 3-7 seconds
-          const delay = Math.random() * 20; // 0-20 seconds for much rarer appearance
-          
+          {starParams.map((star, i) => {
           return <div 
             key={`falling-star-${i}`} 
             className="falling-star absolute bg-gradient-to-r from-transparent via-white to-transparent opacity-80" 
             style={{
-              left: `${startX}%`,
-              top: `${startY}%`,
-              width: `${Math.random() * 60 + 80}px`,
-              height: `${Math.random() * 1 + 1.5}px`,
-              transform: `rotate(${rotation}deg)`,
+              left: `${star.startX}%`,
+              top: `${star.startY}%`,
+              width: `${star.width}px`,
+              height: `${star.height}px`,
+              transform: `rotate(${star.rotation}deg)`,
               transformOrigin: 'left center',
-              animation: `falling-star-${i} ${duration}s linear infinite`,
-              animationDelay: `${delay}s`
+              animation: `falling-star-${i} ${star.duration}s linear infinite`,
+              animationDelay: `${star.delay}s`
             }} 
           />;
         })}
         </div>
 
         <style>
-          {Array.from({
-          length: 4
-        }, (_, i) => {
-          // Generate random movement for each star
-          const side = Math.floor(Math.random() * 3);
-          let deltaX, deltaY;
-          
-          if (side === 0) { // From top
-            deltaX = (Math.random() * 200 + 150) * (Math.random() > 0.5 ? 1 : -1);
-            deltaY = Math.random() * 400 + 300;
-          } else if (side === 1) { // From left
-            deltaX = Math.random() * 400 + 300;
-            deltaY = Math.random() * 200 + 100;
-          } else { // From right
-            deltaX = -(Math.random() * 400 + 300);
-            deltaY = Math.random() * 200 + 100;
-          }
-          
+          {starParams.map((star, i) => {
           return `
               @keyframes falling-star-${i} {
                 0% {
-                  transform: rotate(var(--rotation)) translateX(0px) translateY(0px);
+                  transform: rotate(${star.rotation}deg) translateX(0px) translateY(0px);
                   opacity: 0;
                 }
                 10% {
@@ -94,7 +87,7 @@ const Index = () => {
                   opacity: 1;
                 }
                 100% {
-                  transform: rotate(var(--rotation)) translateX(${deltaX}px) translateY(${deltaY}px);
+                  transform: rotate(${star.rotation}deg) translateX(${star.deltaX}px) translateY(${star.deltaY}px);
                   opacity: 0;
                 }
               }
