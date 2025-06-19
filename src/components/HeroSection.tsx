@@ -2,9 +2,12 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import StatsSection from './StatsSection';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="lg:col-span-8 text-center space-y-8">
       {/* Title Section */}
@@ -31,7 +34,7 @@ const HeroSection = () => {
         <Button 
           size="lg" 
           variant="outline" 
-          onClick={() => window.location.href = '/business.html'} 
+          onClick={() => navigate('/business')} 
           className="group w-full sm:w-auto border-2 border-[#caa75d] text-black hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl"
         >
           Интеграция Midas
