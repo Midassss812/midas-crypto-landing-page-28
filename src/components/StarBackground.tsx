@@ -1,10 +1,49 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const TOTAL_STARS = 200;
+const RADIUS = 80; // радиус реакции в px
 
 const StarBackground = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 }); // за экраном по умолчанию
+  const starsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      starsRef.current.forEach((star) => {
+        if (!star) return;
+
+        const rect = star.getBoundingClientRect();
+        const dx = rect.left + rect.width / 2 - mousePos.x;
+        const dy = rect.top + rect.height / 2 - mousePos.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < RADIUS) {
+          star.style.transform = 'scale(1.8)';
+          star.style.filter = 'brightness(2) blur(1px)';
+          star.style.opacity = '1';
+        } else {
+          star.style.transform = '';
+          star.style.filter = '';
+          star.style.opacity = '';
+        }
+      });
+    }, 50); // обновление 20 раз в секунду
+
+    return () => clearInterval(interval);
+  }, [mousePos]);
+
   return (
-    <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
       {[...Array(TOTAL_STARS)].map((_, i) => {
         const size = Math.random() * 1.5 + 0.5;
         const left = Math.random() * 100;
@@ -15,6 +54,7 @@ const StarBackground = () => {
         return (
           <div
             key={i}
+            ref={(el) => (starsRef.current[i] = el!)}
             className="star animate-twinkle"
             style={{
               width: `${size}px`,
@@ -35,13 +75,7 @@ const StarBackground = () => {
           background: white;
           border-radius: 50%;
           transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
-          pointer-events: auto;
-        }
-
-        .star:hover {
-          transform: scale(1.8);
-          filter: brightness(2);
-          opacity: 1;
+          pointer-events: none;
         }
 
         @keyframes twinkle {
