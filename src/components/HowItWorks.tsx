@@ -35,17 +35,6 @@ const HowItWorks = () => {
     <section className="mb-16">
       <h2 className="text-3xl font-bold text-center mb-12 text-[#caa75d]">Как это работает</h2>
       
-      {/* Process Diagram */}
-      <div className="max-w-4xl mx-auto mb-16 px-4">
-        <div className="flex justify-center">
-          <img 
-            src="/lovable-uploads/929020b0-91d8-4057-8232-f4f3ce8c7924.png" 
-            alt="Схема работы платежной системы Midas" 
-            className="w-full max-w-3xl h-auto rounded-xl shadow-2xl border border-[#333] hover:shadow-[#caa75d]/20 hover:border-[#caa75d]/30 transition-all duration-300"
-          />
-        </div>
-      </div>
-      
       {/* Elegant flow visualization */}
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
