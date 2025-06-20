@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import StarBackground from '@/components/StarBackground';
 import PageFooter from '@/components/PageFooter';
 import BusinessHero from '@/components/BusinessHero';
@@ -8,14 +8,24 @@ import KeyAdvantages from '@/components/KeyAdvantages';
 import GeographyServices from '@/components/GeographyServices';
 import ApiIntegration from '@/components/ApiIntegration';
 import ContactSection from '@/components/ContactSection';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useActiveSection } from '@/hooks/useActiveSection';
 
 const Business = () => {
-  const howItWorksObserver = useIntersectionObserver();
-  const keyAdvantagesObserver = useIntersectionObserver();
-  const geographyObserver = useIntersectionObserver();
-  const apiIntegrationObserver = useIntersectionObserver();
-  const contactObserver = useIntersectionObserver();
+  const { activeSection, registerSection } = useActiveSection();
+  
+  const howItWorksRef = useRef<HTMLDivElement>(null);
+  const keyAdvantagesRef = useRef<HTMLDivElement>(null);
+  const geographyRef = useRef<HTMLDivElement>(null);
+  const apiIntegrationRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    registerSection('howItWorks', howItWorksRef.current);
+    registerSection('keyAdvantages', keyAdvantagesRef.current);
+    registerSection('geography', geographyRef.current);
+    registerSection('apiIntegration', apiIntegrationRef.current);
+    registerSection('contact', contactRef.current);
+  }, [registerSection]);
 
   return (
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
@@ -27,14 +37,15 @@ const Business = () => {
       </div>
 
       {/* Main Content */}
-      <main className="relative z-10 flex-1 px-4 py-8 max-w-6xl mx-auto w-full space-y-8">
+      <main className="relative z-10 flex-1 px-4 py-8 max-w-6xl mx-auto w-full space-y-16">
         <BusinessHero />
         
         <div 
-          ref={howItWorksObserver.ref}
+          ref={howItWorksRef}
+          data-section="howItWorks"
           className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
-            howItWorksObserver.isIntersecting 
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
+            activeSection === 'howItWorks'
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
               : 'border-[#333]/50'
           }`}
         >
@@ -42,10 +53,11 @@ const Business = () => {
         </div>
         
         <div 
-          ref={keyAdvantagesObserver.ref}
+          ref={keyAdvantagesRef}
+          data-section="keyAdvantages"
           className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
-            keyAdvantagesObserver.isIntersecting 
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
+            activeSection === 'keyAdvantages'
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
               : 'border-[#333]/50'
           }`}
         >
@@ -53,10 +65,11 @@ const Business = () => {
         </div>
         
         <div 
-          ref={geographyObserver.ref}
+          ref={geographyRef}
+          data-section="geography"
           className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
-            geographyObserver.isIntersecting 
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
+            activeSection === 'geography'
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
               : 'border-[#333]/50'
           }`}
         >
@@ -64,10 +77,11 @@ const Business = () => {
         </div>
         
         <div 
-          ref={apiIntegrationObserver.ref}
+          ref={apiIntegrationRef}
+          data-section="apiIntegration"
           className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
-            apiIntegrationObserver.isIntersecting 
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
+            activeSection === 'apiIntegration'
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
               : 'border-[#333]/50'
           }`}
         >
@@ -75,10 +89,11 @@ const Business = () => {
         </div>
         
         <div 
-          ref={contactObserver.ref}
+          ref={contactRef}
+          data-section="contact"
           className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
-            contactObserver.isIntersecting 
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
+            activeSection === 'contact'
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
               : 'border-[#333]/50'
           }`}
         >
