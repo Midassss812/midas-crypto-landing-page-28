@@ -4,10 +4,10 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const GeographyServices = () => {
   const geographyData = [
-    { country: "RF", percentage: "80%" },
-    { country: "KZ", percentage: "35%" },
-    { country: "TJ", percentage: "20%" },
-    { country: "UZ", percentage: "20%" }
+    { country: "RF", percentage: "75%" },
+    { country: "KZ", percentage: "10%" },
+    { country: "TJ", percentage: "7.5%" },
+    { country: "UZ", percentage: "7.5%" }
   ];
 
   return (
