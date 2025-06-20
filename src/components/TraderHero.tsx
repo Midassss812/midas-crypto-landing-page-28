@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useScrollScale } from '@/hooks/useScrollScale';
 import { TrendingUp, Shield, Clock, Zap } from "lucide-react";
@@ -50,23 +49,42 @@ const TraderHero = () => {
             <div className="h-1 bg-gradient-to-r from-[#caa75d] to-transparent rounded-full mt-2"></div>
           </div>
           
-          {/* Изображение короля под надписью Midas */}
+          {/* Изображение короля под надписью Midas в круглом контейнере */}
           <div className="relative flex justify-center">
-            <div className="relative inline-block">
-              {/* Декоративные кольца вокруг изображения - ограничены размером изображения */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#caa75d]/20 to-transparent rounded-full w-full h-full animate-pulse"></div>
-              <div className="absolute inset-2 border-2 border-[#caa75d]/30 rounded-full"></div>
+            <div className="relative">
+              {/* Круглый контейнер для короля */}
+              <div 
+                className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-gradient-to-r from-[#caa75d] to-[#d4b668] bg-gradient-to-br from-[#1a1a1a]/50 to-[#0d0d0d]/50 shadow-2xl shadow-[#caa75d]/20"
+                style={{ 
+                  borderImage: 'linear-gradient(45deg, #caa75d, #d4b668) 1',
+                  transform: `scale(${scale})`,
+                  transition: 'transform 0.1s ease-out'
+                }}
+              >
+                {/* Градиентная рамка */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#caa75d] to-[#d4b668] p-1">
+                  <div className="w-full h-full rounded-full bg-gradient-to-br from-[#1a1a1a]/80 to-[#0d0d0d]/80 flex items-center justify-center">
+                    {/* Изображение короля */}
+                    <img 
+                      src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" 
+                      alt="Midas King" 
+                      className="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 hover:scale-110"
+                    />
+                  </div>
+                </div>
+                
+                {/* Световые эффекты внутри круга */}
+                <div className="absolute top-[20%] left-[20%] w-3 h-3 bg-[#caa75d] rounded-full opacity-60 animate-ping"></div>
+                <div className="absolute bottom-[25%] right-[20%] w-2 h-2 bg-[#d4b668] rounded-full opacity-40 animate-ping" style={{ animationDelay: '1s' }}></div>
+                
+                {/* Декоративные внутренние кольца */}
+                <div className="absolute inset-4 border border-[#caa75d]/20 rounded-full animate-pulse"></div>
+                <div className="absolute inset-8 border border-[#d4b668]/15 rounded-full"></div>
+              </div>
               
-              <img 
-                src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" 
-                alt="Midas King" 
-                className="relative z-10 max-w-full h-auto max-h-[300px] object-contain transition-transform duration-500 ease-out hover:scale-110"
-                style={{ transform: `scale(${scale})` }}
-              />
-              
-              {/* Световые эффекты - позиционированы относительно изображения */}
-              <div className="absolute top-[25%] left-[25%] w-3 h-3 bg-[#caa75d] rounded-full opacity-60 animate-ping"></div>
-              <div className="absolute bottom-[33%] right-[25%] w-2 h-2 bg-[#d4b668] rounded-full opacity-40 animate-ping" style={{ animationDelay: '1s' }}></div>
+              {/* Внешние декоративные кольца */}
+              <div className="absolute inset-0 w-[110%] h-[110%] top-[-5%] left-[-5%] border border-[#caa75d]/20 rounded-full animate-pulse"></div>
+              <div className="absolute inset-0 w-[120%] h-[120%] top-[-10%] left-[-10%] bg-gradient-to-r from-[#caa75d]/10 to-transparent rounded-full"></div>
             </div>
           </div>
           
@@ -105,13 +123,13 @@ const TraderHero = () => {
           })}
         </div>
 
-        {/* Call-to-action секция с исправленными анимациями */}
+        {/* Call-to-action секция */}
         <div className="relative mt-12">
-          <div className="bg-gradient-to-r from-[#1a1a1a]/60 to-[#141414]/60 border border-[#caa75d]/30 rounded-2xl p-6 max-w-2xl mx-auto transform transition-all duration-300 hover:scale-[1.02] hover:border-[#caa75d]/50">
-            <h3 className="text-xl font-semibold text-white mb-2 transition-colors duration-300">
+          <div className="bg-gradient-to-r from-[#1a1a1a]/60 to-[#141414]/60 border border-[#caa75d]/30 rounded-2xl p-6 max-w-2xl mx-auto transition-all duration-300 hover:scale-[1.02] hover:border-[#caa75d]/50">
+            <h3 className="text-xl font-semibold text-white mb-2">
               Готовы начать зарабатывать?
             </h3>
-            <p className="text-gray-300 text-sm transition-colors duration-300">
+            <p className="text-gray-300 text-sm">
               Присоединяйтесь к сообществу успешных трейдеров Midas уже сегодня
             </p>
           </div>
