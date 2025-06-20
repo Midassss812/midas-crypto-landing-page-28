@@ -8,7 +8,7 @@ export const useScrollScale = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const maxScroll = 500; // Уменьшил с 800px до 500px для более быстрого срабатывания
-      const minScale = 0.3; // Уменьшил с 0.6 до 0.3 для более драматичного эффекта
+      const minScale = 0.7; // Изменил с 0.3 до 0.7 для менее драматичного эффекта
       const maxScale = 1; // Максимальный размер (100% от оригинала)
       
       // Вычисляем масштаб на основе позиции скролла
