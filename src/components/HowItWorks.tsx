@@ -1,14 +1,9 @@
 
 import React from 'react';
-import { CreditCard, Monitor, Check, DollarSign, User } from "lucide-react";
+import { Monitor, Check, DollarSign, User } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
-    {
-      icon: CreditCard,
-      title: "Банковская карта",
-      description: "Клиент использует свою карту"
-    },
     {
       icon: User,
       title: "Запрос реквизитов",
