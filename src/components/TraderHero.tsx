@@ -49,23 +49,23 @@ const TraderHero = () => {
             <div className="h-1 bg-gradient-to-r from-[#caa75d] to-transparent rounded-full mt-2"></div>
           </div>
           
-          {/* Контейнер для изображения короля - восстановленная гибкая структура */}
+          {/* Контейнер для изображения короля с ограничением высоты */}
           <div className="relative flex justify-center">
-            <div className="relative inline-block">
-              {/* Декоративные кольца вокруг изображения - адаптируются к размеру изображения */}
+            <div className="relative inline-block h-[250px] overflow-hidden">
+              {/* Декоративные кольца вокруг изображения */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#caa75d]/20 to-transparent rounded-full animate-pulse"></div>
               <div className="absolute inset-0 border-2 border-[#caa75d]/30 rounded-full"></div>
               <div className="absolute inset-0 border border-[#caa75d]/20 rounded-full animate-ping"></div>
               
-              {/* Изображение короля - остается внутри области с правильным позиционированием */}
+              {/* Изображение короля - ограничено высотой контейнера */}
               <img 
                 src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" 
                 alt="Midas King" 
-                className="relative z-10 max-w-full h-auto max-h-[300px] object-contain transition-transform duration-500 ease-out hover:scale-110 transform-origin-center"
+                className="relative z-10 w-auto h-full object-contain transition-transform duration-500 ease-out hover:scale-110"
                 style={{ transform: `scale(${scale})` }}
               />
               
-              {/* Световые эффекты - позиционированы относительно изображения */}
+              {/* Световые эффекты */}
               <div className="absolute top-[25%] left-[25%] w-3 h-3 bg-[#caa75d] rounded-full opacity-60 animate-ping"></div>
               <div className="absolute bottom-[33%] right-[25%] w-2 h-2 bg-[#d4b668] rounded-full opacity-40 animate-ping" style={{ animationDelay: '1s' }}></div>
               <div className="absolute top-[50%] right-[15%] w-2 h-2 bg-[#caa75d] rounded-full opacity-50 animate-pulse" style={{ animationDelay: '2s' }}></div>
