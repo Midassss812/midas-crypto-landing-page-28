@@ -25,7 +25,7 @@ const HeroSection = () => {
       <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
         <Button 
           size="lg" 
-          onClick={() => window.location.href = '/trader.html'} 
+          onClick={() => navigate('/trader')} 
           className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl"
         >
           Стать трейдером
