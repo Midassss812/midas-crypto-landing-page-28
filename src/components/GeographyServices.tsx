@@ -11,7 +11,7 @@ const GeographyServices = () => {
   ];
 
   return (
-    <section className="mb-16">
+    <section>
       <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">География оказания услуг</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
         {geographyData.map((item, index) => (

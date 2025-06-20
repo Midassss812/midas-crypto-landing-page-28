@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { DollarSign, FileText, Wallet, Check, User } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,7 +28,7 @@ const ApiIntegration = () => {
   ];
 
   return (
-    <section className="mb-16">
+    <section>
       <h2 className="text-3xl font-bold text-center mb-12 text-[#caa75d] uppercase tracking-wider">
         Интеграция по API
       </h2>

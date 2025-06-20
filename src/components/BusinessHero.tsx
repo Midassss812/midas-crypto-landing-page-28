@@ -3,7 +3,7 @@ import React from 'react';
 
 const BusinessHero = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-12 mb-16 pt-20">
+    <div className="flex flex-col lg:flex-row items-center gap-12 pt-12">
       <div className="lg:w-1/2 text-center lg:text-left space-y-6">
         <span className="text-[#caa75d] text-4xl sm:text-5xl lg:text-6xl font-bold">Midas</span>
         <h1 className="text-xl sm:text-2xl lg:text-3xl text-white font-semibold leading-tight">
