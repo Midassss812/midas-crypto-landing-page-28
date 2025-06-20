@@ -7,8 +7,8 @@ export const useScrollScale = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const maxScroll = 800; // После 800px скролла король будет минимального размера
-      const minScale = 0.6; // Минимальный размер (60% от оригинала)
+      const maxScroll = 500; // Уменьшил с 800px до 500px для более быстрого срабатывания
+      const minScale = 0.3; // Уменьшил с 0.6 до 0.3 для более драматичного эффекта
       const maxScale = 1; // Максимальный размер (100% от оригинала)
       
       // Вычисляем масштаб на основе позиции скролла
