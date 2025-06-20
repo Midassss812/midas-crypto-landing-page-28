@@ -16,14 +16,26 @@ export const useActiveSection = () => {
   useEffect(() => {
     const findClosestToCenter = () => {
       const viewportCenter = window.innerHeight / 2;
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Проверяем, находимся ли мы в самом низу страницы (в пределах 100px от конца)
+      const isAtBottom = scrollY + windowHeight >= documentHeight - 100;
+      
+      console.log(`Scroll position: ${scrollY}, isAtBottom: ${isAtBottom}`);
+
       let closestSection = null;
       let closestDistance = Infinity;
+      let lastVisibleSection = null;
 
       sectionsRef.current.forEach((element, id) => {
         const rect = element.getBoundingClientRect();
         
         // Проверяем, что элемент хотя бы частично видим
         if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          lastVisibleSection = id;
+          
           const elementCenter = rect.top + rect.height / 2;
           const distance = Math.abs(viewportCenter - elementCenter);
           
@@ -35,6 +47,12 @@ export const useActiveSection = () => {
           }
         }
       });
+
+      // Если мы в самом низу страницы, активируем последний видимый блок
+      if (isAtBottom && lastVisibleSection) {
+        closestSection = lastVisibleSection;
+        console.log(`At bottom of page, activating last visible section: ${lastVisibleSection}`);
+      }
 
       if (closestSection && closestSection !== activeSection) {
         console.log(`Setting active section to: ${closestSection}`);
