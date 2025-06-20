@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { CreditCard, Monitor, Check, DollarSign, User } from "lucide-react";
 
@@ -37,7 +38,7 @@ const HowItWorks = () => {
       {/* Прозрачная схема */}
       <div className="flex justify-center mb-12 px-4">
         <img
-          src="/lovable-uploads/8cbe730c-f8dc-4cc1-ba27-f114f886023b.png"
+          src="/lovable-uploads/7613494a-ce4e-4d73-9151-ee753b3ba4f2.png"
           alt="Схема работы платежной системы Midas"
           className="w-full max-w-[850px] h-auto"
         />
@@ -59,4 +60,16 @@ const HowItWorks = () => {
                   )}
                 </div>
                 <div className="max-w-xs">
-                  <h3 className="text-white font-semibold text
+                  <h3 className="text-white font-semibold text-lg mb-2">{step.title}</h3>
+                  <p className="text-gray-300 text-sm">{step.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HowItWorks;
