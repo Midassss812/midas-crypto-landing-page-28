@@ -33,6 +33,15 @@ const ApiIntegration = () => {
         Интеграция по API
       </h2>
       
+      {/* Изображение схемы */}
+      <div className="flex justify-center mb-12 px-4">
+        <img
+          src="/lovable-uploads/0a2b9cf1-38a4-43a2-9933-424535900db1.png"
+          alt="Схема работы API интеграции Midas"
+          className="w-full max-w-[900px] h-auto rounded-xl shadow-2xl"
+        />
+      </div>
+      
       {/* Enhanced API Flow */}
       <div className="mb-16">
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-8 max-w-7xl mx-auto">

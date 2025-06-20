@@ -35,15 +35,6 @@ const HowItWorks = () => {
     <section className="mb-16">
       <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">Как это работает</h2>
 
-      {/* Вставка вашего изображения-схемы */}
-      <div className="flex justify-center mb-12 px-4">
-        <img
-          src="/lovable-uploads/0a2b9cf1-38a4-43a2-9933-424535900db1.png"
-          alt="Схема работы платежной системы Midas"
-          className="w-full max-w-[900px] h-auto rounded-xl shadow-2xl"
-        />
-      </div>
-
       {/* Этапы визуально */}
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
