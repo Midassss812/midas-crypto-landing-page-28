@@ -21,9 +21,7 @@ const Business = () => {
 
       {/* Main Content */}
       <main className="relative z-10 flex-1 px-4 py-8 max-w-6xl mx-auto w-full space-y-8">
-        <div className="bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border border-[#333]/50 rounded-lg p-8 hover:border-[#caa75d]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[#caa75d]/10">
-          <BusinessHero />
-        </div>
+        <BusinessHero />
         
         <div className="bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border border-[#333]/50 rounded-lg p-8 hover:border-[#caa75d]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[#caa75d]/10">
           <HowItWorks />
