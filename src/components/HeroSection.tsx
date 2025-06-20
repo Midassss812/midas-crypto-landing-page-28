@@ -32,10 +32,9 @@ const HeroSection = () => {
           <ArrowRight className="ml-2" />
         </Button>
         <Button 
-          size="lg" 
-          variant="outline" 
+          size="lg"
           onClick={() => navigate('/business')} 
-          className="group w-full sm:w-auto border-2 border-[#caa75d] text-black hover:bg-[#caa75d] hover:text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl"
+          className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-16 py-6 text-xl"
         >
           Интеграция Midas
           <ArrowRight className="ml-2" />
