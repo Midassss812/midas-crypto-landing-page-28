@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TrendingUp, DollarSign, Users, BarChart3 } from "lucide-react";
+import { TrendingUp, Shield, Users, BarChart3 } from "lucide-react";
 
 const TraderAdvantages = () => {
   const advantages = [
@@ -10,9 +10,9 @@ const TraderAdvantages = () => {
       description: "Зависит от объёма обработки и частоты онлайна"
     },
     {
-      icon: DollarSign,
-      title: "Минимум 500 USDT",
-      description: "Минимальная сумма пополнения для начала работы"
+      icon: Shield,
+      title: "Без страхового депозита",
+      description: "Начинайте работу без предварительных вложений"
     },
     {
       icon: Users,

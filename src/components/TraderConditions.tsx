@@ -7,7 +7,7 @@ const TraderConditions = () => {
     {
       icon: CheckCircle,
       title: "Простое подключение",
-      description: "Быстрая регистрация и начало работы в течение 24 часов"
+      description: "Быстрая регистрация и начало работы в день регистрации"
     },
     {
       icon: Clock,
@@ -83,14 +83,10 @@ const TraderConditions = () => {
       </div>
 
       {/* Статистика */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="text-center space-y-2">
           <div className="text-3xl font-bold text-[#caa75d]">7-10%</div>
           <div className="text-gray-300">Комиссия</div>
-        </div>
-        <div className="text-center space-y-2">
-          <div className="text-3xl font-bold text-[#caa75d]">500 USDT</div>
-          <div className="text-gray-300">Минимум</div>
         </div>
         <div className="text-center space-y-2">
           <div className="text-3xl font-bold text-[#caa75d]">24/7</div>

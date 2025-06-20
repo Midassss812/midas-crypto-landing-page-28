@@ -4,7 +4,9 @@ import StarBackground from '@/components/StarBackground';
 import PageFooter from '@/components/PageFooter';
 import TraderHero from '@/components/TraderHero';
 import TraderAdvantages from '@/components/TraderAdvantages';
+import TraderWorkflow from '@/components/TraderWorkflow';
 import TraderConditions from '@/components/TraderConditions';
+import TraderFeatures from '@/components/TraderFeatures';
 import ContactSection from '@/components/ContactSection';
 import { useActiveSection } from '@/hooks/useActiveSection';
 
@@ -12,12 +14,16 @@ const Trader = () => {
   const { activeSection, registerSection } = useActiveSection();
   
   const advantagesRef = useRef<HTMLDivElement>(null);
+  const workflowRef = useRef<HTMLDivElement>(null);
   const conditionsRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     registerSection('advantages', advantagesRef.current);
+    registerSection('workflow', workflowRef.current);
     registerSection('conditions', conditionsRef.current);
+    registerSection('features', featuresRef.current);
     registerSection('contact', contactRef.current);
   }, [registerSection]);
 
@@ -47,6 +53,18 @@ const Trader = () => {
         >
           <TraderAdvantages />
         </div>
+
+        <div 
+          ref={workflowRef}
+          data-section="workflow"
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out ${
+            activeSection === 'workflow'
+              ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
+              : 'border-[#333]/50 hover:border-[#444]/60'
+          }`}
+        >
+          <TraderWorkflow />
+        </div>
         
         <div 
           ref={conditionsRef}
@@ -58,6 +76,18 @@ const Trader = () => {
           }`}
         >
           <TraderConditions />
+        </div>
+
+        <div 
+          ref={featuresRef}
+          data-section="features"
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out ${
+            activeSection === 'features'
+              ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
+              : 'border-[#333]/50 hover:border-[#444]/60'
+          }`}
+        >
+          <TraderFeatures />
         </div>
         
         <div 
