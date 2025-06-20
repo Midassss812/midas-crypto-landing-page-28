@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CreditCard, Monitor, Check, DollarSign, User } from "lucide-react";
 
@@ -34,56 +33,30 @@ const HowItWorks = () => {
   return (
     <section className="mb-16">
       <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">Как это работает</h2>
-      
-      {/* Process Diagram */}
-      <div className="max-w-4xl mx-auto mb-12 px-4">
-        <div className="flex justify-center">
-          <img 
-            src="/lovable-uploads/7613494a-ce4e-4d73-9151-ee753b3ba4f2.png" 
-            alt="Схема работы платежной системы Midas" 
-            className="w-full max-w-[800px] h-auto rounded-xl shadow-2xl border border-[#caa75d]/30 hover:shadow-[#caa75d]/20 hover:border-[#caa75d]/50 hover:scale-105 transition-all duration-300"
-          />
-        </div>
+
+      {/* Прозрачная схема */}
+      <div className="flex justify-center mb-12 px-4">
+        <img
+          src="/lovable-uploads/8cbe730c-f8dc-4cc1-ba27-f114f886023b.png"
+          alt="Схема работы платежной системы Midas"
+          className="w-full max-w-[850px] h-auto"
+        />
       </div>
-      
-      {/* Elegant flow visualization */}
+
+      {/* Этапы */}
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             return (
               <div key={index} className="flex flex-col items-center text-center flex-1">
-                {/* Icon container with enhanced styling */}
                 <div className="relative">
                   <div className="w-20 h-20 bg-gradient-to-br from-[#caa75d] to-[#b8965a] rounded-full flex items-center justify-center mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <IconComponent className="w-10 h-10 text-[#020202]" />
                   </div>
-                  {/* Connection line for desktop */}
                   {index < steps.length - 1 && (
                     <div className="hidden lg:block absolute top-10 left-20 w-16 xl:w-24 h-0.5 bg-gradient-to-r from-[#caa75d] to-transparent"></div>
                   )}
                 </div>
-                
-                {/* Step content */}
                 <div className="max-w-xs">
-                  <h3 className="text-white font-semibold text-lg mb-2">{step.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
-                </div>
-                
-                {/* Mobile connection arrow */}
-                {index < steps.length - 1 && (
-                  <div className="lg:hidden mt-6 mb-2">
-                    <div className="w-px h-8 bg-gradient-to-b from-[#caa75d] to-transparent mx-auto"></div>
-                    <div className="text-[#caa75d] text-xl">↓</div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default HowItWorks;
+                  <h3 className="text-white font-semibold text
