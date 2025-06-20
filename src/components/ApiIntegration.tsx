@@ -5,11 +5,11 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const ApiIntegration = () => {
   const apiFlow = [
-    { icon: User, label: "КЛИЕНТ", description: "Инициирует запрос" },
-    { icon: DollarSign, label: "ПОПОЛНИТЬ", description: "Выбирает сумму" },
-    { icon: FileText, label: "API РЕКВИЗИТЫ", description: "Получает данные" },
-    { icon: Globe, label: "БАЛАНС", description: "Проверяет статус" },
-    { icon: Check, label: "УСПЕШНО", description: "Завершение операции", isSuccess: true }
+    { icon: User, title: "Клиент", description: "Инициирует запрос" },
+    { icon: DollarSign, title: "Пополнение", description: "Выбирает сумму" },
+    { icon: FileText, title: "API реквизиты", description: "Получает данные" },
+    { icon: Globe, title: "Баланс", description: "Проверяет статус" },
+    { icon: Check, title: "Успешно", description: "Завершение операции" }
   ];
 
   const integrationSteps = [
@@ -33,53 +33,30 @@ const ApiIntegration = () => {
         Интеграция по API
       </h2>
       
-      {/* Изображение схемы */}
-      <div className="flex justify-center mb-12 px-4">
-        <img
-          src="/lovable-uploads/0a2b9cf1-38a4-43a2-9933-424535900db1.png"
-          alt="Схема работы API интеграции Midas"
-          className="w-full max-w-[900px] h-auto rounded-xl shadow-2xl"
-        />
-      </div>
-      
-      {/* Enhanced API Flow */}
+      {/* API Flow с тем же стилем что и в HowItWorks */}
       <div className="mb-16">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-8 max-w-7xl mx-auto">
-          {apiFlow.map((step, index) => {
-            const IconComponent = step.icon;
-            return (
-              <div key={index} className="flex flex-col items-center text-center relative">
-                {/* Icon with enhanced styling */}
-                <div className={`w-24 h-24 rounded-xl flex items-center justify-center mb-4 shadow-lg transition-all duration-300 hover:scale-105 ${
-                  step.isSuccess 
-                    ? 'bg-gradient-to-br from-green-600 to-green-700' 
-                    : 'bg-gradient-to-br from-[#caa75d] to-[#b8965a]'
-                }`}>
-                  <IconComponent className={`w-12 h-12 ${step.isSuccess ? 'text-white' : 'text-[#020202]'}`} />
-                </div>
-                
-                {/* Step info */}
-                <div className="max-w-xs">
-                  <span className="text-sm text-[#caa75d] font-bold tracking-wide block mb-1">
-                    {step.label}
-                  </span>
-                  <span className="text-xs text-gray-400">{step.description}</span>
-                </div>
-                
-                {/* Connection arrow for desktop */}
-                {index < apiFlow.length - 1 && (
-                  <div className="hidden md:block absolute top-12 left-24 lg:left-28">
-                    <div className="text-[#caa75d] text-2xl lg:text-3xl">→</div>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
+            {apiFlow.map((step, index) => {
+              const IconComponent = step.icon;
+              return (
+                <div key={index} className="flex flex-col items-center text-center flex-1">
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-gradient-to-br from-[#caa75d] to-[#b8965a] rounded-full flex items-center justify-center mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                      <IconComponent className="w-10 h-10 text-[#020202]" />
+                    </div>
+                    {index < apiFlow.length - 1 && (
+                      <div className="hidden lg:block absolute top-10 left-20 w-16 xl:w-24 h-0.5 bg-gradient-to-r from-[#caa75d] to-transparent"></div>
+                    )}
                   </div>
-                )}
-                
-                {/* Mobile connection */}
-                {index < apiFlow.length - 1 && (
-                  <div className="md:hidden mt-4 mb-2 text-[#caa75d] text-xl">↓</div>
-                )}
-              </div>
-            );
-          })}
+                  <div className="max-w-xs">
+                    <h3 className="text-white font-semibold text-lg mb-2">{step.title}</h3>
+                    <p className="text-gray-300 text-sm">{step.description}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
