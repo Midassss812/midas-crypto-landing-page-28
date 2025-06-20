@@ -37,13 +37,13 @@ const HowItWorks = () => {
       {/* Вставка картинки-схемы */}
       <div className="flex justify-center mb-12 px-4">
         <img
-          src="/lovable-uploads/e5b224fe-0f89-45e0-95b6-3eb5acadbab7.png"
+          src="/lovable-uploads/ea9d27c8-8fb3-4527-8ed3-41444f1b6cf5.png"
           alt="Схема работы платежной системы Midas"
           className="w-full max-w-[850px] h-auto rounded-xl shadow-2xl"
         />
       </div>
 
-      {/* Этапы внизу */}
+      {/* Этапы визуально */}
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
           {steps.map((step, index) => {
