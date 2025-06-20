@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { DollarSign, FileText, Globe, Check, User } from "lucide-react";
+import { DollarSign, FileText, Wallet, Check, User } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const ApiIntegration = () => {
@@ -8,7 +8,7 @@ const ApiIntegration = () => {
     { icon: User, title: "Клиент", description: "Инициирует запрос" },
     { icon: DollarSign, title: "Пополнение", description: "Выбирает сумму" },
     { icon: FileText, title: "API реквизиты", description: "Получает данные" },
-    { icon: Globe, title: "Баланс", description: "Проверяет статус" },
+    { icon: Wallet, title: "Баланс", description: "Проверяет статус" },
     { icon: Check, title: "Успешно", description: "Завершение операции" }
   ];
 
