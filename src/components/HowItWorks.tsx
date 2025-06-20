@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Monitor, Check, DollarSign, User } from "lucide-react";
+import { Monitor, Check, Landmark, User } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
@@ -20,9 +20,9 @@ const HowItWorks = () => {
       description: "Успешное завершение операции"
     },
     {
-      icon: DollarSign,
+      icon: Landmark,
       title: "Зачисление",
-      description: "Доллары поступают на баланс"
+      description: "Средства поступают на баланс"
     }
   ];
 
