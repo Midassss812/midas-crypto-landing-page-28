@@ -1,9 +1,34 @@
 
 import React from 'react';
-import { Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
+  const { toast } = useToast();
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText('Midas_P2P@proton.me');
+      toast({
+        title: "Email адрес скопирован!",
+        description: "Midas_P2P@proton.me скопирован в буфер обмена",
+      });
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = 'Midas_P2P@proton.me';
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      toast({
+        title: "Email адрес скопирован!",
+        description: "Midas_P2P@proton.me скопирован в буфер обмена",
+      });
+    }
+  };
+
   return (
     <section className="text-center space-y-8">
       <h2 className="text-3xl font-bold text-[#caa75d]">Свяжитесь с нами</h2>
@@ -15,9 +40,9 @@ const ContactSection = () => {
         <Button 
           size="lg" 
           className="group w-full sm:w-auto bg-[#caa75d] hover:bg-[#b8965a] text-[#0a0a0a] font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-8 py-6 text-lg"
-          onClick={() => window.open('mailto:Midas_P2P@proton.me', '_blank')}
+          onClick={copyEmail}
         >
-          <Mail className="mr-2" />
+          <Copy className="mr-2" />
           Midas_P2P@proton.me
         </Button>
         <Button 
