@@ -38,7 +38,7 @@ const HowItWorks = () => {
       {/* Прозрачная схема */}
       <div className="flex justify-center mb-12 px-4">
         <img
-          src="/lovable-uploads/7613494a-ce4e-4d73-9151-ee753b3ba4f2.png"
+          src="/lovable-uploads/5c031ff7-adb6-4157-a64f-486561fe9b11.png"
           alt="Схема работы платежной системы Midas"
           className="w-full max-w-[850px] h-auto"
         />
