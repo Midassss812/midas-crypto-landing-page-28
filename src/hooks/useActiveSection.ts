@@ -33,7 +33,9 @@ export const useActiveSection = () => {
           }
         });
 
-        setActiveSection(closestSection);
+        if (closestSection) {
+          setActiveSection(closestSection);
+        }
       },
       {
         threshold: [0.1, 0.3, 0.5, 0.7, 0.9],
@@ -41,11 +43,18 @@ export const useActiveSection = () => {
       }
     );
 
-    sectionsRef.current.forEach((element) => {
-      observer.observe(element);
-    });
+    // Наблюдаем за всеми зарегистрированными секциями
+    const observeAll = () => {
+      sectionsRef.current.forEach((element) => {
+        observer.observe(element);
+      });
+    };
+
+    // Запускаем наблюдение с небольшой задержкой чтобы элементы успели зарегистрироваться
+    const timeoutId = setTimeout(observeAll, 100);
 
     return () => {
+      clearTimeout(timeoutId);
       observer.disconnect();
     };
   }, []);

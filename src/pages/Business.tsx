@@ -27,6 +27,8 @@ const Business = () => {
     registerSection('contact', contactRef.current);
   }, [registerSection]);
 
+  console.log('Active section:', activeSection);
+
   return (
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
