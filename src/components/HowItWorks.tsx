@@ -39,7 +39,7 @@ const HowItWorks = () => {
       <div className="max-w-4xl mx-auto mb-12 px-4">
         <div className="flex justify-center">
           <img 
-            src="/lovable-uploads/9d32dc82-b3f9-488f-a686-a89c928de4b5.png" 
+            src="/lovable-uploads/7613494a-ce4e-4d73-9151-ee753b3ba4f2.png" 
             alt="Схема работы платежной системы Midas" 
             className="w-full max-w-[800px] h-auto rounded-xl shadow-2xl border border-[#caa75d]/30 hover:shadow-[#caa75d]/20 hover:border-[#caa75d]/50 hover:scale-105 transition-all duration-300"
           />
