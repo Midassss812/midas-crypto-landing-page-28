@@ -33,7 +33,18 @@ const HowItWorks = () => {
 
   return (
     <section className="mb-16">
-      <h2 className="text-3xl font-bold text-center mb-12 text-[#caa75d]">Как это работает</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 text-[#caa75d]">Как это работает</h2>
+      
+      {/* Process Diagram */}
+      <div className="max-w-4xl mx-auto mb-12 px-4">
+        <div className="flex justify-center">
+          <img 
+            src="/lovable-uploads/9d32dc82-b3f9-488f-a686-a89c928de4b5.png" 
+            alt="Схема работы платежной системы Midas" 
+            className="w-full max-w-[800px] h-auto rounded-xl shadow-2xl border border-[#caa75d]/30 hover:shadow-[#caa75d]/20 hover:border-[#caa75d]/50 hover:scale-105 transition-all duration-300"
+          />
+        </div>
+      </div>
       
       {/* Elegant flow visualization */}
       <div className="max-w-6xl mx-auto">
