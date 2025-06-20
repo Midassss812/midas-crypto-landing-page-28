@@ -16,7 +16,7 @@ const TraderHero = () => {
     {
       icon: Shield,
       value: "0₽",
-      label: "Депозит",
+      label: "Страховой Депозит",
       color: "text-blue-400"
     },
     {
@@ -48,6 +48,26 @@ const TraderHero = () => {
               Midas
             </span>
             <div className="h-1 bg-gradient-to-r from-[#caa75d] to-transparent rounded-full mt-2"></div>
+          </div>
+          
+          {/* Изображение короля под надписью Midas */}
+          <div className="relative flex justify-center">
+            <div className="relative">
+              {/* Декоративные кольца вокруг изображения */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#caa75d]/20 to-transparent rounded-full w-[120%] h-[120%] top-[-10%] left-[-10%] animate-pulse"></div>
+              <div className="absolute inset-0 border-2 border-[#caa75d]/30 rounded-full w-[110%] h-[110%] top-[-5%] left-[-5%]"></div>
+              
+              <img 
+                src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" 
+                alt="Midas King" 
+                className="relative z-10 max-w-full h-auto max-h-[300px] object-contain transition-transform duration-500 ease-out hover:scale-110"
+                style={{ transform: `scale(${scale})` }}
+              />
+              
+              {/* Световые эффекты */}
+              <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-[#caa75d] rounded-full opacity-60 animate-ping"></div>
+              <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-[#d4b668] rounded-full opacity-40 animate-ping" style={{ animationDelay: '1s' }}></div>
+            </div>
           </div>
           
           <h1 className="text-2xl sm:text-3xl lg:text-4xl text-white font-bold leading-tight max-w-4xl mx-auto">
@@ -85,34 +105,16 @@ const TraderHero = () => {
           })}
         </div>
 
-        {/* Изображение короля с эффектами */}
-        <div className="relative flex justify-center mt-12">
-          <div className="relative">
-            {/* Декоративные кольца вокруг изображения */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#caa75d]/20 to-transparent rounded-full w-[120%] h-[120%] top-[-10%] left-[-10%] animate-pulse"></div>
-            <div className="absolute inset-0 border-2 border-[#caa75d]/30 rounded-full w-[110%] h-[110%] top-[-5%] left-[-5%]"></div>
-            
-            <img 
-              src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" 
-              alt="Midas King" 
-              className="relative z-10 max-w-full h-auto max-h-[400px] object-contain transition-transform duration-500 ease-out hover:scale-110"
-              style={{ transform: `scale(${scale})` }}
-            />
-            
-            {/* Световые эффекты */}
-            <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-[#caa75d] rounded-full opacity-60 animate-ping"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-[#d4b668] rounded-full opacity-40 animate-ping" style={{ animationDelay: '1s' }}></div>
+        {/* Call-to-action секция с исправленными анимациями */}
+        <div className="relative mt-12">
+          <div className="bg-gradient-to-r from-[#1a1a1a]/60 to-[#141414]/60 border border-[#caa75d]/30 rounded-2xl p-6 max-w-2xl mx-auto transform transition-all duration-300 hover:scale-[1.02] hover:border-[#caa75d]/50">
+            <h3 className="text-xl font-semibold text-white mb-2 transition-colors duration-300">
+              Готовы начать зарабатывать?
+            </h3>
+            <p className="text-gray-300 text-sm transition-colors duration-300">
+              Присоединяйтесь к сообществу успешных трейдеров Midas уже сегодня
+            </p>
           </div>
-        </div>
-
-        {/* Call-to-action секция */}
-        <div className="bg-gradient-to-r from-[#1a1a1a]/60 to-[#141414]/60 border border-[#caa75d]/30 rounded-2xl p-6 max-w-2xl mx-auto">
-          <h3 className="text-xl font-semibold text-white mb-2">
-            Готовы начать зарабатывать?
-          </h3>
-          <p className="text-gray-300 text-sm">
-            Присоединяйтесь к сообществу успешных трейдеров Midas уже сегодня
-          </p>
         </div>
       </div>
     </div>
