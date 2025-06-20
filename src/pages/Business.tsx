@@ -32,9 +32,9 @@ const Business = () => {
         
         <div 
           ref={howItWorksObserver.ref}
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-500 ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
             howItWorksObserver.isIntersecting 
-              ? 'border-[#caa75d]/50 shadow-lg shadow-[#caa75d]/20 scale-[1.02]' 
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
               : 'border-[#333]/50'
           }`}
         >
@@ -43,9 +43,9 @@ const Business = () => {
         
         <div 
           ref={keyAdvantagesObserver.ref}
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-500 ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
             keyAdvantagesObserver.isIntersecting 
-              ? 'border-[#caa75d]/50 shadow-lg shadow-[#caa75d]/20 scale-[1.02]' 
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
               : 'border-[#333]/50'
           }`}
         >
@@ -54,9 +54,9 @@ const Business = () => {
         
         <div 
           ref={geographyObserver.ref}
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-500 ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
             geographyObserver.isIntersecting 
-              ? 'border-[#caa75d]/50 shadow-lg shadow-[#caa75d]/20 scale-[1.02]' 
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
               : 'border-[#333]/50'
           }`}
         >
@@ -65,9 +65,9 @@ const Business = () => {
         
         <div 
           ref={apiIntegrationObserver.ref}
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-500 ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
             apiIntegrationObserver.isIntersecting 
-              ? 'border-[#caa75d]/50 shadow-lg shadow-[#caa75d]/20 scale-[1.02]' 
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
               : 'border-[#333]/50'
           }`}
         >
@@ -76,9 +76,9 @@ const Business = () => {
         
         <div 
           ref={contactObserver.ref}
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-500 ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
             contactObserver.isIntersecting 
-              ? 'border-[#caa75d]/50 shadow-lg shadow-[#caa75d]/20 scale-[1.02]' 
+              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70' 
               : 'border-[#333]/50'
           }`}
         >
