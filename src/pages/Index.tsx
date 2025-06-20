@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { TrendingUp, Shield, Zap, BarChart3 } from "lucide-react";
+import { TrendingUp, Shield, Zap, BarChart3, LogIn } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import StarBackground from '@/components/StarBackground';
 import FeaturePanel from '@/components/FeaturePanel';
 import HeroSection from '@/components/HeroSection';
@@ -25,6 +26,17 @@ const Index = () => {
       {/* Logo top-left */}
       <div className="absolute top-6 left-6 z-10">
         <img src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
+      </div>
+
+      {/* Login button top-right */}
+      <div className="absolute top-6 right-6 z-10">
+        <Button 
+          variant="outline" 
+          className="bg-transparent border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] transition-all duration-300"
+        >
+          <LogIn className="w-4 h-4 mr-2" />
+          Вход
+        </Button>
       </div>
 
       {/* Main Section */}
