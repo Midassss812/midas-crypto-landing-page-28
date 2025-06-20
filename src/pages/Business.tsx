@@ -39,16 +39,16 @@ const Business = () => {
       </div>
 
       {/* Main Content */}
-      <main className="relative z-10 flex-1 px-4 py-8 max-w-6xl mx-auto w-full space-y-16">
+      <main className="relative z-10 flex-1 px-4 py-8 max-w-6xl mx-auto w-full space-y-8">
         <BusinessHero />
         
         <div 
           ref={howItWorksRef}
           data-section="howItWorks"
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out ${
             activeSection === 'howItWorks'
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
-              : 'border-[#333]/50'
+              ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
+              : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
         >
           <HowItWorks />
@@ -57,10 +57,10 @@ const Business = () => {
         <div 
           ref={keyAdvantagesRef}
           data-section="keyAdvantages"
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out ${
             activeSection === 'keyAdvantages'
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
-              : 'border-[#333]/50'
+              ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
+              : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
         >
           <KeyAdvantages />
@@ -69,10 +69,10 @@ const Business = () => {
         <div 
           ref={geographyRef}
           data-section="geography"
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out ${
             activeSection === 'geography'
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
-              : 'border-[#333]/50'
+              ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
+              : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
         >
           <GeographyServices />
@@ -81,10 +81,10 @@ const Business = () => {
         <div 
           ref={apiIntegrationRef}
           data-section="apiIntegration"
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out ${
             activeSection === 'apiIntegration'
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
-              : 'border-[#333]/50'
+              ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
+              : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
         >
           <ApiIntegration />
@@ -93,10 +93,10 @@ const Business = () => {
         <div 
           ref={contactRef}
           data-section="contact"
-          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-1000 ease-in-out ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out ${
             activeSection === 'contact'
-              ? 'border-[#caa75d]/80 shadow-xl shadow-[#caa75d]/40 scale-[1.01] bg-gradient-to-r from-[#1a1a1a]/70 to-[#141414]/70 -mx-2' 
-              : 'border-[#333]/50'
+              ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
+              : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
         >
           <ContactSection />

@@ -14,50 +14,52 @@ export const useActiveSection = () => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let closestSection = null;
-        let closestDistance = Infinity;
+    const findClosestToCenter = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let closestSection = null;
+      let closestDistance = Infinity;
 
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const rect = entry.boundingClientRect;
-            const viewportCenter = window.innerHeight / 2;
-            const elementCenter = rect.top + rect.height / 2;
-            const distance = Math.abs(viewportCenter - elementCenter);
-
-            if (distance < closestDistance) {
-              closestDistance = distance;
-              closestSection = entry.target.getAttribute('data-section');
-            }
+      sectionsRef.current.forEach((element, id) => {
+        const rect = element.getBoundingClientRect();
+        
+        // Проверяем, что элемент хотя бы частично видим
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          const elementCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(viewportCenter - elementCenter);
+          
+          console.log(`Section ${id}: top=${rect.top.toFixed(0)}, center=${elementCenter.toFixed(0)}, distance=${distance.toFixed(0)}`);
+          
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestSection = id;
           }
-        });
-
-        if (closestSection) {
-          setActiveSection(closestSection);
         }
-      },
-      {
-        threshold: [0.1, 0.3, 0.5, 0.7, 0.9],
-        rootMargin: '-30% 0px -30% 0px',
-      }
-    );
-
-    // Наблюдаем за всеми зарегистрированными секциями
-    const observeAll = () => {
-      sectionsRef.current.forEach((element) => {
-        observer.observe(element);
       });
+
+      if (closestSection && closestSection !== activeSection) {
+        console.log(`Setting active section to: ${closestSection}`);
+        setActiveSection(closestSection);
+      }
     };
 
-    // Запускаем наблюдение с небольшой задержкой чтобы элементы успели зарегистрироваться
-    const timeoutId = setTimeout(observeAll, 100);
+    // Используем scroll event вместо IntersectionObserver для более точного контроля
+    const handleScroll = () => {
+      requestAnimationFrame(findClosestToCenter);
+    };
+
+    // Запускаем первоначальную проверку
+    const timeoutId = setTimeout(findClosestToCenter, 100);
+    
+    // Добавляем обработчик скролла
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
 
     return () => {
       clearTimeout(timeoutId);
-      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
-  }, []);
+  }, [activeSection]);
 
   return { activeSection, registerSection };
 };
