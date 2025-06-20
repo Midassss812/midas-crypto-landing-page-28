@@ -29,10 +29,6 @@ const ContactSection = () => {
           Telegram: Midas_p2p
         </Button>
       </div>
-      
-      <p className="text-sm text-gray-400 italic mt-4">
-        *Оплата комиссии зависит от сложности кейса
-      </p>
     </section>
   );
 };
