@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { DollarSign, FileText, Wallet, Check, User } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,7 +22,7 @@ const ApiIntegration = () => {
     },
     {
       title: "Запускайте платежи",
-      description: "Начинайте принимать платежи в тот же день после интеграции"
+      description: "пользуйтесь платежным решением в день интеграции"
     }
   ];
 
