@@ -23,7 +23,7 @@ const ContactSection = () => {
         <Button 
           size="lg" 
           variant="outline"
-          className="group w-full sm:w-auto border-2 border-[#caa75d] text-white hover:bg-[#caa75d] hover:text-black font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-8 py-6 text-lg"
+          className="group w-full sm:w-auto border-2 border-[#caa75d] text-black hover:bg-[#caa75d] hover:text-black font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#caa75d]/20 px-8 py-6 text-lg"
           onClick={() => window.open('https://t.me/Midas_p2p', '_blank')}
         >
           <MessageCircle className="mr-2" />
