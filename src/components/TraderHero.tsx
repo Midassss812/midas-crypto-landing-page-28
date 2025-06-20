@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useScrollScale } from '@/hooks/useScrollScale';
 import { TrendingUp, Shield, Clock, Zap } from "lucide-react";
@@ -49,42 +50,58 @@ const TraderHero = () => {
             <div className="h-1 bg-gradient-to-r from-[#caa75d] to-transparent rounded-full mt-2"></div>
           </div>
           
-          {/* Изображение короля под надписью Midas в круглом контейнере */}
+          {/* Анимированный контейнер для короля */}
           <div className="relative flex justify-center">
             <div className="relative">
-              {/* Круглый контейнер для короля */}
+              {/* Основной контейнер с множественными анимированными кольцами */}
               <div 
-                className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-gradient-to-r from-[#caa75d] to-[#d4b668] bg-gradient-to-br from-[#1a1a1a]/50 to-[#0d0d0d]/50 shadow-2xl shadow-[#caa75d]/20"
+                className="relative w-64 h-64 sm:w-72 sm:h-72"
                 style={{ 
-                  borderImage: 'linear-gradient(45deg, #caa75d, #d4b668) 1',
                   transform: `scale(${scale})`,
                   transition: 'transform 0.1s ease-out'
                 }}
               >
-                {/* Градиентная рамка */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#caa75d] to-[#d4b668] p-1">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-[#1a1a1a]/80 to-[#0d0d0d]/80 flex items-center justify-center">
-                    {/* Изображение короля */}
+                {/* Внешние вращающиеся кольца */}
+                <div className="absolute inset-0 w-full h-full border-2 border-[#caa75d]/30 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
+                <div className="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] border border-[#d4b668]/20 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
+                <div className="absolute inset-8 w-[calc(100%-4rem)] h-[calc(100%-4rem)] border border-[#caa75d]/40 rounded-full animate-spin" style={{ animationDuration: '25s' }}></div>
+                
+                {/* Пульсирующие градиентные кольца */}
+                <div className="absolute inset-2 w-[calc(100%-1rem)] h-[calc(100%-1rem)] bg-gradient-to-r from-[#caa75d]/10 to-transparent rounded-full animate-pulse"></div>
+                <div className="absolute inset-6 w-[calc(100%-3rem)] h-[calc(100%-3rem)] bg-gradient-to-r from-[#d4b668]/15 to-transparent rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                
+                {/* Центральный контейнер для короля с overflow hidden */}
+                <div className="absolute inset-12 w-[calc(100%-6rem)] h-[calc(100%-6rem)] rounded-full overflow-hidden bg-gradient-to-br from-[#1a1a1a]/80 to-[#0d0d0d]/80 border-2 border-[#caa75d]/50 shadow-2xl shadow-[#caa75d]/30">
+                  {/* Изображение короля с контролируемыми границами */}
+                  <div className="w-full h-full flex items-center justify-center p-4">
                     <img 
                       src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" 
                       alt="Midas King" 
-                      className="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 hover:scale-110"
+                      className="max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-110"
                     />
                   </div>
                 </div>
                 
-                {/* Световые эффекты внутри круга */}
-                <div className="absolute top-[20%] left-[20%] w-3 h-3 bg-[#caa75d] rounded-full opacity-60 animate-ping"></div>
-                <div className="absolute bottom-[25%] right-[20%] w-2 h-2 bg-[#d4b668] rounded-full opacity-40 animate-ping" style={{ animationDelay: '1s' }}></div>
+                {/* Вращающиеся световые точки */}
+                <div className="absolute top-4 left-1/2 w-3 h-3 bg-[#caa75d] rounded-full opacity-80 animate-ping transform -translate-x-1/2"></div>
+                <div className="absolute bottom-4 left-1/4 w-2 h-2 bg-[#d4b668] rounded-full opacity-60 animate-ping" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute right-4 top-1/3 w-2 h-2 bg-[#caa75d] rounded-full opacity-70 animate-ping" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute left-4 bottom-1/3 w-3 h-3 bg-[#d4b668] rounded-full opacity-50 animate-ping" style={{ animationDelay: '1.5s' }}></div>
                 
-                {/* Декоративные внутренние кольца */}
-                <div className="absolute inset-4 border border-[#caa75d]/20 rounded-full animate-pulse"></div>
-                <div className="absolute inset-8 border border-[#d4b668]/15 rounded-full"></div>
+                {/* Дополнительные декоративные элементы */}
+                <div className="absolute top-8 right-8 w-4 h-4 bg-gradient-to-r from-[#caa75d] to-[#d4b668] rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
+                <div className="absolute bottom-8 left-8 w-3 h-3 bg-gradient-to-r from-[#d4b668] to-[#caa75d] rounded-full animate-bounce" style={{ animationDelay: '0.8s' }}></div>
+                
+                {/* Внутренние пульсирующие кольца */}
+                <div className="absolute inset-10 w-[calc(100%-5rem)] h-[calc(100%-5rem)] border border-[#caa75d]/30 rounded-full animate-pulse"></div>
+                <div className="absolute inset-14 w-[calc(100%-7rem)] h-[calc(100%-7rem)] border border-[#d4b668]/20 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                
+                {/* Вращающиеся градиентные сегменты */}
+                <div className="absolute inset-0 w-full h-full opacity-30">
+                  <div className="absolute top-0 left-1/2 w-1 h-8 bg-gradient-to-b from-[#caa75d] to-transparent transform -translate-x-1/2 animate-spin" style={{ animationDuration: '8s' }}></div>
+                  <div className="absolute bottom-0 left-1/2 w-1 h-6 bg-gradient-to-t from-[#d4b668] to-transparent transform -translate-x-1/2 animate-spin" style={{ animationDuration: '12s', animationDirection: 'reverse' }}></div>
+                </div>
               </div>
-              
-              {/* Внешние декоративные кольца */}
-              <div className="absolute inset-0 w-[110%] h-[110%] top-[-5%] left-[-5%] border border-[#caa75d]/20 rounded-full animate-pulse"></div>
-              <div className="absolute inset-0 w-[120%] h-[120%] top-[-10%] left-[-10%] bg-gradient-to-r from-[#caa75d]/10 to-transparent rounded-full"></div>
             </div>
           </div>
           
