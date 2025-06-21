@@ -33,19 +33,19 @@ const Business = () => {
     <>
       <StarBackground />
 
-      {/* Absolutely Fixed Header for Logo - completely separate from main container */}
-      <header className="fixed top-0 left-0 w-full z-[9999] pointer-events-none">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex-shrink-0 pointer-events-auto">
-            <img src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
-          </div>
-        </div>
-      </header>
+      {/* Абсолютно зафиксированный логотип */}
+      <div className="fixed top-4 left-4 z-[9999]">
+        <img 
+          src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" 
+          alt="Midas King Icon" 
+          className="h-16 w-16 sm:h-20 sm:w-20 object-contain" 
+        />
+      </div>
 
       {/* Main Page Container */}
       <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col">
-        {/* Main Content with top padding to account for fixed header */}
-        <main className="relative z-10 flex-1 px-4 pb-8 pt-24 sm:pt-28 max-w-6xl mx-auto w-full space-y-8">
+        {/* Main Content без лишних отступов сверху */}
+        <main className="relative z-10 flex-1 px-4 pb-8 pt-8 max-w-6xl mx-auto w-full space-y-8">
           <BusinessHero />
           
           <div 
