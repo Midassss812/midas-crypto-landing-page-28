@@ -33,14 +33,10 @@ const Business = () => {
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
 
-      {/* Fixed Header Container for Logo */}
-      <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex-shrink-0 pointer-events-auto">
-            <img src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
-          </div>
-        </div>
-      </header>
+      {/* Fixed Logo - without any container constraints */}
+      <div className="fixed top-4 left-4 z-[100]">
+        <img src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
+      </div>
 
       {/* Main Content without top padding */}
       <main className="relative z-10 flex-1 px-4 pb-8 max-w-6xl mx-auto w-full space-y-8">
