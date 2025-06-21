@@ -12,11 +12,11 @@ const Index = () => {
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
 
-      {/* Completely Isolated Fixed Logo */}
+      {/* Completely Isolated Fixed Logo Container */}
       <div 
         className="fixed top-4 left-4 z-[10000] pointer-events-auto"
         style={{ 
-          position: 'fixed !important',
+          position: 'fixed',
           transform: 'translateZ(0)',
           backfaceVisibility: 'hidden',
           isolation: 'isolate'
@@ -33,11 +33,11 @@ const Index = () => {
         />
       </div>
       
-      {/* Completely Isolated Fixed Login Button */}
+      {/* Completely Isolated Fixed Login Button Container */}
       <div 
         className="fixed top-4 right-4 z-[10000] pointer-events-auto"
         style={{ 
-          position: 'fixed !important',
+          position: 'fixed',
           transform: 'translateZ(0)',
           backfaceVisibility: 'hidden',
           isolation: 'isolate'
@@ -55,14 +55,17 @@ const Index = () => {
       {/* Main Section without centering constraints */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-16 w-full pointer-events-none">
         {/* Simplified layout - central content only */}
-        <div className="max-w-7xl mx-auto w-full flex items-center justify-center min-h-[80vh] pointer-events-auto">
-          {/* Central Content */}
-          <HeroSection />
+        <div className="w-full flex items-center justify-center min-h-[80vh] pointer-events-auto">
+          <div className="max-w-7xl mx-auto w-full">
+            <HeroSection />
+          </div>
         </div>
 
         {/* Additional Features Section for Mobile */}
-        <div className="max-w-7xl mx-auto w-full pointer-events-auto">
-          <MobileFeatures />
+        <div className="w-full pointer-events-auto">
+          <div className="max-w-7xl mx-auto w-full">
+            <MobileFeatures />
+          </div>
         </div>
       </main>
 

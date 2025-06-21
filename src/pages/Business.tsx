@@ -33,11 +33,11 @@ const Business = () => {
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
 
-      {/* Completely Isolated Fixed Logo */}
+      {/* Completely Isolated Fixed Logo Container */}
       <div 
         className="fixed top-4 left-4 z-[10000] pointer-events-auto"
         style={{ 
-          position: 'fixed !important',
+          position: 'fixed',
           transform: 'translateZ(0)',
           backfaceVisibility: 'hidden',
           isolation: 'isolate'
@@ -56,73 +56,85 @@ const Business = () => {
 
       {/* Main Content without centering constraints */}
       <main className="relative z-10 flex-1 px-4 pb-8 w-full space-y-8 pointer-events-none">
-        <div className="max-w-6xl mx-auto pointer-events-auto">
-          <BusinessHero />
+        <div className="pointer-events-auto">
+          <div className="max-w-6xl mx-auto">
+            <BusinessHero />
+          </div>
         </div>
         
         <div 
           ref={howItWorksRef}
           data-section="howItWorks"
-          className={`max-w-6xl mx-auto bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
             activeSection === 'howItWorks'
               ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
               : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
           style={{ transformOrigin: 'center' }}
         >
-          <HowItWorks />
+          <div className="max-w-6xl mx-auto">
+            <HowItWorks />
+          </div>
         </div>
         
         <div 
           ref={keyAdvantagesRef}
           data-section="keyAdvantages"
-          className={`max-w-6xl mx-auto bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
             activeSection === 'keyAdvantages'
               ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
               : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
           style={{ transformOrigin: 'center' }}
         >
-          <KeyAdvantages />
+          <div className="max-w-6xl mx-auto">
+            <KeyAdvantages />
+          </div>
         </div>
         
         <div 
           ref={geographyRef}
           data-section="geography"
-          className={`max-w-6xl mx-auto bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
             activeSection === 'geography'
               ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
               : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
           style={{ transformOrigin: 'center' }}
         >
-          <GeographyServices />
+          <div className="max-w-6xl mx-auto">
+            <GeographyServices />
+          </div>
         </div>
         
         <div 
           ref={apiIntegrationRef}
           data-section="apiIntegration"
-          className={`max-w-6xl mx-auto bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
             activeSection === 'apiIntegration'
               ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
               : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
           style={{ transformOrigin: 'center' }}
         >
-          <ApiIntegration />
+          <div className="max-w-6xl mx-auto">
+            <ApiIntegration />
+          </div>
         </div>
         
         <div 
           ref={contactRef}
           data-section="contact"
-          className={`max-w-6xl mx-auto bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
+          className={`bg-gradient-to-r from-[#1a1a1a]/50 to-[#141414]/50 border rounded-lg p-8 transition-all duration-700 ease-out pointer-events-auto ${
             activeSection === 'contact'
               ? 'border-[#caa75d]/90 shadow-2xl shadow-[#caa75d]/30 transform scale-[1.02] bg-gradient-to-r from-[#1a1a1a]/80 to-[#141414]/80' 
               : 'border-[#333]/50 hover:border-[#444]/60'
           }`}
           style={{ transformOrigin: 'center' }}
         >
-          <ContactSection />
+          <div className="max-w-6xl mx-auto">
+            <ContactSection />
+          </div>
         </div>
       </main>
 
