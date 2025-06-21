@@ -33,13 +33,17 @@ const Trader = () => {
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
 
-      {/* Logo top-left */}
-      <div className="absolute top-6 left-6 z-10">
-        <img src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
-      </div>
+      {/* Fixed Header Container for Logo */}
+      <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+        <div className="max-w-6xl mx-auto px-4 py-6">
+          <div className="flex-shrink-0 pointer-events-auto">
+            <img src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
+          </div>
+        </div>
+      </header>
 
-      {/* Main Content */}
-      <main className="relative z-10 flex-1 px-4 py-8 max-w-6xl mx-auto w-full space-y-8">
+      {/* Main Content with top padding to account for fixed header */}
+      <main className="relative z-10 flex-1 px-4 pt-24 pb-8 max-w-6xl mx-auto w-full space-y-8">
         <TraderHero />
         
         <div 
