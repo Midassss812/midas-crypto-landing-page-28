@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import StarBackground from '@/components/StarBackground';
 import PageFooter from '@/components/PageFooter';
@@ -35,15 +34,15 @@ const Trader = () => {
 
       {/* Fixed Header Container for Logo */}
       <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-        <div className="max-w-6xl mx-auto px-4 py-6">
+        <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex-shrink-0 pointer-events-auto">
             <img src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
           </div>
         </div>
       </header>
 
-      {/* Main Content with top padding to account for fixed header */}
-      <main className="relative z-10 flex-1 px-4 pt-24 pb-8 max-w-6xl mx-auto w-full space-y-8">
+      {/* Main Content without top padding */}
+      <main className="relative z-10 flex-1 px-4 pb-8 max-w-6xl mx-auto w-full space-y-8">
         <TraderHero />
         
         <div 
