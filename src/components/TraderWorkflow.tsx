@@ -17,7 +17,7 @@ const TraderWorkflow = () => {
     {
       icon: CheckCircle,
       title: "Обработка платежей",
-      description: "Принимаете и обрабатываете платежи от клиентов"
+      description: "Принимайте платежи от проверенных контрагентов"
     },
     {
       icon: DollarSign,
