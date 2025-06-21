@@ -1,24 +1,13 @@
 
 import React from 'react';
-import { TrendingUp, Shield, Zap, BarChart3, LogIn } from "lucide-react";
+import { LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import StarBackground from '@/components/StarBackground';
-import FeaturePanel from '@/components/FeaturePanel';
 import HeroSection from '@/components/HeroSection';
 import MobileFeatures from '@/components/MobileFeatures';
 import PageFooter from '@/components/PageFooter';
 
 const Index = () => {
-  const leftFeatures = [
-    { icon: TrendingUp, title: "Высокая доходность", description: "Максимизируйте прибыль" },
-    { icon: Shield, title: "Безопасность", description: "Защищенные транзакции" }
-  ];
-
-  const rightFeatures = [
-    { icon: Zap, title: "Быстрые операции", description: "Мгновенные транзакции" },
-    { icon: BarChart3, title: "Аналитика", description: "Детальная отчетность" }
-  ];
-
   return (
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
@@ -40,18 +29,11 @@ const Index = () => {
       </div>
 
       {/* Main Section */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-8 max-w-7xl mx-auto w-full">
-        {/* Grid Layout for better space utilization */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center min-h-[80vh]">
-          
-          {/* Left Feature Panel */}
-          <FeaturePanel features={leftFeatures} className="lg:col-span-2" />
-
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-16 max-w-7xl mx-auto w-full">
+        {/* Simplified layout - central content only */}
+        <div className="w-full flex items-center justify-center min-h-[80vh]">
           {/* Central Content */}
           <HeroSection />
-
-          {/* Right Feature Panel */}
-          <FeaturePanel features={rightFeatures} className="lg:col-span-2" />
         </div>
 
         {/* Additional Features Section for Mobile */}
