@@ -9,11 +9,11 @@ import PageFooter from '@/components/PageFooter';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative">
+    <>
       <StarBackground />
 
-      {/* Fixed Header Container for Logo */}
-      <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+      {/* Absolutely Fixed Header for Logo and Login - completely separate from main container */}
+      <header className="fixed top-0 left-0 w-full z-[9999] pointer-events-none">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-start pointer-events-auto">
           {/* Logo fixed in left corner */}
           <div className="flex-shrink-0">
@@ -31,20 +31,23 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Main Section with top padding to account for fixed header */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-16 pt-20 sm:pt-24 max-w-7xl mx-auto w-full">
-        {/* Simplified layout - central content only */}
-        <div className="w-full flex items-center justify-center min-h-[80vh]">
-          {/* Central Content */}
-          <HeroSection />
-        </div>
+      {/* Main Page Container */}
+      <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col">
+        {/* Main Section with top padding to account for fixed header */}
+        <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-16 pt-24 sm:pt-28 max-w-7xl mx-auto w-full">
+          {/* Simplified layout - central content only */}
+          <div className="w-full flex items-center justify-center min-h-[80vh]">
+            {/* Central Content */}
+            <HeroSection />
+          </div>
 
-        {/* Additional Features Section for Mobile */}
-        <MobileFeatures />
-      </main>
+          {/* Additional Features Section for Mobile */}
+          <MobileFeatures />
+        </main>
 
-      <PageFooter />
-    </div>
+        <PageFooter />
+      </div>
+    </>
   );
 };
 
