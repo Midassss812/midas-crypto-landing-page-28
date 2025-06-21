@@ -10,33 +10,6 @@ import PageFooter from '@/components/PageFooter';
 const Index = () => {
   return (
     <>
-      {/* Абсолютно изолированный логотип - вне основного layout */}
-      <div 
-        style={{
-          position: 'fixed',
-          top: '16px',
-          left: '16px',
-          zIndex: 99999,
-          pointerEvents: 'auto',
-          transform: 'translate3d(0, 0, 0)',
-          willChange: 'auto',
-          contain: 'layout style paint'
-        }}
-      >
-        <img 
-          src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" 
-          alt="Midas King Icon" 
-          style={{
-            height: '4rem',
-            width: '4rem',
-            objectFit: 'contain',
-            transform: 'translate3d(0, 0, 0)',
-            willChange: 'auto'
-          }}
-          className="sm:h-20 sm:w-20"
-        />
-      </div>
-      
       {/* Абсолютно изолированная кнопка входа - вне основного layout */}
       <div 
         style={{
@@ -47,7 +20,9 @@ const Index = () => {
           pointerEvents: 'auto',
           transform: 'translate3d(0, 0, 0)',
           willChange: 'auto',
-          contain: 'layout style paint'
+          contain: 'layout style paint',
+          isolation: 'isolate',
+          backfaceVisibility: 'hidden'
         }}
       >
         <Button 
