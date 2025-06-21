@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import StarBackground from '@/components/StarBackground';
 import PageFooter from '@/components/PageFooter';
@@ -30,7 +29,7 @@ const Trader = () => {
   console.log('Active section:', activeSection);
 
   return (
-    <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative">
+    <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
 
       {/* Fixed Header Container for Logo */}
@@ -42,8 +41,8 @@ const Trader = () => {
         </div>
       </header>
 
-      {/* Main Content with top padding to account for fixed header */}
-      <main className="relative z-10 flex-1 px-4 pb-8 pt-20 sm:pt-24 max-w-6xl mx-auto w-full space-y-8">
+      {/* Main Content without top padding */}
+      <main className="relative z-10 flex-1 px-4 pb-8 max-w-6xl mx-auto w-full space-y-8">
         <TraderHero />
         
         <div 

@@ -9,7 +9,7 @@ import PageFooter from '@/components/PageFooter';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative">
+    <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
 
       {/* Fixed Header Container for Logo */}
@@ -31,8 +31,8 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Main Section with top padding to account for fixed header */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-16 pt-20 sm:pt-24 max-w-7xl mx-auto w-full">
+      {/* Main Section without top padding */}
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-16 max-w-7xl mx-auto w-full">
         {/* Simplified layout - central content only */}
         <div className="w-full flex items-center justify-center min-h-[80vh]">
           {/* Central Content */}
