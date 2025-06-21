@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useScrollScale } from '@/hooks/useScrollScale';
 import { TrendingUp, Shield, Clock, Zap } from "lucide-react";
@@ -32,6 +33,10 @@ const TraderHero = () => {
     }
   ];
 
+  const handleTelegramClick = () => {
+    window.open('https://t.me/+xYZ-D_QWnVY2Zjc6', '_blank');
+  };
+
   return (
     <div className="relative pt-12 pb-8">
       {/* Декоративный градиентный фон */}
@@ -52,12 +57,10 @@ const TraderHero = () => {
           {/* Контейнер для изображения короля с увеличенной анимированной областью */}
           <div className="relative flex justify-center my-8">
             <div className="relative inline-block h-[350px] w-[350px] overflow-hidden">
-              {/* Декоративные кольца вокруг изображения */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#caa75d]/20 to-transparent rounded-full animate-pulse"></div>
               <div className="absolute inset-0 border-2 border-[#caa75d]/30 rounded-full"></div>
               <div className="absolute inset-0 border border-[#caa75d]/20 rounded-full animate-ping"></div>
               
-              {/* Изображение короля полностью внутри анимированной области */}
               <img 
                 src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" 
                 alt="Midas King" 
@@ -65,7 +68,6 @@ const TraderHero = () => {
                 style={{ transform: `scale(${scale})` }}
               />
               
-              {/* Световые эффекты адаптированы к увеличенной области */}
               <div className="absolute top-[25%] left-[25%] w-3 h-3 bg-[#caa75d] rounded-full opacity-60 animate-ping"></div>
               <div className="absolute bottom-[33%] right-[25%] w-2 h-2 bg-[#d4b668] rounded-full opacity-40 animate-ping" style={{ animationDelay: '1s' }}></div>
               <div className="absolute top-[50%] right-[15%] w-2 h-2 bg-[#caa75d] rounded-full opacity-50 animate-pulse" style={{ animationDelay: '2s' }}></div>
@@ -107,13 +109,16 @@ const TraderHero = () => {
           })}
         </div>
 
-        {/* Call-to-action секция с исправленными анимациями */}
+        {/* Call-to-action section - now clickable with Telegram link */}
         <div className="relative mt-12">
-          <div className="bg-gradient-to-r from-[#1a1a1a]/60 to-[#141414]/60 border border-[#caa75d]/30 rounded-2xl p-6 max-w-2xl mx-auto transform transition-all duration-300 hover:scale-[1.02] hover:border-[#caa75d]/50">
-            <h3 className="text-xl font-semibold text-white mb-2 transition-colors duration-300">
+          <div 
+            onClick={handleTelegramClick}
+            className="bg-gradient-to-r from-[#1a1a1a]/60 to-[#141414]/60 border border-[#caa75d]/30 rounded-2xl p-6 max-w-2xl mx-auto transform transition-all duration-300 hover:scale-[1.02] hover:border-[#caa75d]/50 cursor-pointer hover:shadow-lg hover:shadow-[#caa75d]/20 active:scale-[0.98]"
+          >
+            <h3 className="text-xl font-semibold text-white mb-2 transition-colors duration-300 group-hover:text-[#caa75d]">
               Готовы начать зарабатывать?
             </h3>
-            <p className="text-gray-300 text-sm transition-colors duration-300">
+            <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-gray-200">
               Присоединяйтесь к сообществу успешных трейдеров Midas уже сегодня
             </p>
           </div>
