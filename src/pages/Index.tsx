@@ -12,13 +12,23 @@ const Index = () => {
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
 
-      {/* Fixed Logo - without any container constraints */}
-      <div className="fixed top-4 left-4 z-[100]">
-        <img src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" alt="Midas King Icon" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
+      {/* Fixed Logo - absolutely positioned with isolation */}
+      <div 
+        className="fixed top-4 left-4 z-[9999] pointer-events-auto"
+        style={{ willChange: 'transform' }}
+      >
+        <img 
+          src="/lovable-uploads/9f563d21-3cce-40e4-ba1d-0cf6699b56a2.png" 
+          alt="Midas King Icon" 
+          className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+        />
       </div>
       
-      {/* Fixed Login Button - without any container constraints */}
-      <div className="fixed top-4 right-4 z-[100]">
+      {/* Fixed Login Button - absolutely positioned with isolation */}
+      <div 
+        className="fixed top-4 right-4 z-[9999] pointer-events-auto"
+        style={{ willChange: 'transform' }}
+      >
         <Button 
           variant="outline" 
           className="bg-transparent border-[#caa75d] text-[#caa75d] hover:bg-[#caa75d] hover:text-[#0a0a0a] transition-all duration-300"
@@ -28,16 +38,18 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* Main Section without top padding */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-16 max-w-7xl mx-auto w-full">
+      {/* Main Section with pointer events isolation */}
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-16 max-w-7xl mx-auto w-full pointer-events-none">
         {/* Simplified layout - central content only */}
-        <div className="w-full flex items-center justify-center min-h-[80vh]">
+        <div className="w-full flex items-center justify-center min-h-[80vh] pointer-events-auto">
           {/* Central Content */}
           <HeroSection />
         </div>
 
         {/* Additional Features Section for Mobile */}
-        <MobileFeatures />
+        <div className="pointer-events-auto">
+          <MobileFeatures />
+        </div>
       </main>
 
       <PageFooter />
