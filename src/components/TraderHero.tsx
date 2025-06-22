@@ -65,7 +65,7 @@ const TraderHero = () => {
                 alt="Midas King" 
                 className="relative z-10 w-full h-full object-contain transition-transform duration-500 ease-out hover:scale-105 transform-origin-center rounded-full"
                 style={{ 
-                  transform: `scale(${1.15 + (scale - 1) * 0.8})`,
+                  transform: `scale(${1.25 + (scale - 1) * 0.8})`,
                 }}
               />
               
