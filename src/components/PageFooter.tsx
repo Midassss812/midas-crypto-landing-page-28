@@ -28,6 +28,10 @@ const PageFooter = () => {
     }
   };
 
+  const handleTelegramClick = () => {
+    window.open('https://t.me/Midas_p2p', '_blank');
+  };
+
   return (
     <footer className="relative z-10 pb-8 text-center text-sm text-[#888] opacity-70 mt-auto px-6 pointer-events-auto">
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-[#c0c0c0]">
@@ -38,10 +42,13 @@ const PageFooter = () => {
           <Copy className="w-4 h-4" />
           Midas_P2P@proton.me
         </button>
-        <a href="https://t.me/Midas_p2p" className="flex items-center gap-2 hover:text-[#caa75d]">
+        <button 
+          onClick={handleTelegramClick}
+          className="flex items-center gap-2 hover:text-[#caa75d] transition-colors cursor-pointer"
+        >
           <Send className="w-4 h-4" />
           Midas_p2p
-        </a>
+        </button>
       </div>
     </footer>
   );
