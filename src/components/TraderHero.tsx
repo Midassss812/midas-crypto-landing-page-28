@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { useScrollScale } from '@/hooks/useScrollScale';
-import { TrendingUp, Shield, Clock, Zap } from "lucide-react";
+import { TrendingUp, Shield, Clock, Zap, ArrowRight } from "lucide-react";
 
 const TraderHero = () => {
   const scale = useScrollScale();
@@ -110,18 +111,23 @@ const TraderHero = () => {
           })}
         </div>
 
-        {/* Call-to-action section - now clickable with Telegram link */}
+        {/* Call-to-action section - улучшенная кнопка */}
         <div className="relative mt-12">
           <div 
             onClick={handleTelegramClick}
-            className="bg-gradient-to-r from-[#1a1a1a]/60 to-[#141414]/60 border border-[#caa75d]/30 rounded-2xl p-6 max-w-2xl mx-auto transform transition-all duration-300 hover:scale-[1.02] hover:border-[#caa75d]/50 cursor-pointer hover:shadow-lg hover:shadow-[#caa75d]/20 active:scale-[0.98]"
+            className="bg-gradient-to-r from-[#caa75d]/80 to-[#d4b668]/70 border-2 border-[#caa75d] rounded-2xl p-6 max-w-2xl mx-auto transform transition-all duration-300 hover:scale-[1.02] hover:border-[#d4b668] cursor-pointer hover:shadow-xl hover:shadow-[#caa75d]/30 active:scale-[0.98] hover:from-[#caa75d] hover:to-[#d4b668] group"
           >
-            <h3 className="text-xl font-semibold text-white mb-2 transition-colors duration-300 group-hover:text-[#caa75d]">
-              Готовы начать зарабатывать?
-            </h3>
-            <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-gray-200">
-              Присоединяйтесь к сообществу успешных трейдеров Midas уже сегодня
-            </p>
+            <div className="flex items-center justify-center gap-3">
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-2 transition-colors duration-300 group-hover:text-[#1a1a1a]">
+                  Готовы начать зарабатывать?
+                </h3>
+                <p className="text-[#1a1a1a]/80 text-sm transition-colors duration-300 group-hover:text-[#1a1a1a]">
+                  Присоединяйтесь к сообществу успешных трейдеров Midas уже сегодня
+                </p>
+              </div>
+              <ArrowRight className="w-6 h-6 text-black group-hover:text-[#1a1a1a] transition-all duration-300 group-hover:translate-x-1" />
+            </div>
           </div>
         </div>
       </div>
