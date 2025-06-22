@@ -1,7 +1,7 @@
-
 import React, { useRef, useEffect } from 'react';
 import StarBackground from '@/components/StarBackground';
 import PageFooter from '@/components/PageFooter';
+import Header from '@/components/Header';
 import TraderHero from '@/components/TraderHero';
 import TraderAdvantages from '@/components/TraderAdvantages';
 import TraderWorkflow from '@/components/TraderWorkflow';
@@ -32,9 +32,10 @@ const Trader = () => {
   return (
     <div className="min-h-screen bg-[#020202] text-[#f0f0f0] flex flex-col relative overflow-hidden">
       <StarBackground />
+      <Header />
 
-      {/* Main Content */}
-      <main className="relative z-10 flex-1 px-4 pb-8 w-full space-y-8 pointer-events-none">
+      {/* Main Content - добавлен pt-20 для отступа от header */}
+      <main className="relative z-10 flex-1 px-4 pb-8 pt-20 w-full space-y-8 pointer-events-none">
         <div className="pointer-events-auto">
           <div className="max-w-6xl mx-auto">
             <TraderHero />
