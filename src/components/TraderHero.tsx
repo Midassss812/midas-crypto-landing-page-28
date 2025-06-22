@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useScrollScale } from '@/hooks/useScrollScale';
 import { TrendingUp, Shield, Clock, Zap } from "lucide-react";
@@ -54,9 +53,9 @@ const TraderHero = () => {
             <div className="h-1 bg-gradient-to-r from-[#caa75d] to-transparent rounded-full mt-2"></div>
           </div>
           
-          {/* Контейнер для изображения короля с увеличенной анимированной областью */}
+          {/* Контейнер для изображения короля с круглой анимированной областью */}
           <div className="relative flex justify-center my-8">
-            <div className="relative inline-block h-[350px] w-[350px] overflow-hidden">
+            <div className="relative inline-block h-[350px] w-[350px] overflow-hidden rounded-full">
               <div className="absolute inset-0 bg-gradient-to-r from-[#caa75d]/20 to-transparent rounded-full animate-pulse"></div>
               <div className="absolute inset-0 border-2 border-[#caa75d]/30 rounded-full"></div>
               <div className="absolute inset-0 border border-[#caa75d]/20 rounded-full animate-ping"></div>
@@ -64,9 +63,9 @@ const TraderHero = () => {
               <img 
                 src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" 
                 alt="Midas King" 
-                className="relative z-10 w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105 transform-origin-center"
+                className="relative z-10 w-full h-full object-contain transition-transform duration-500 ease-out hover:scale-105 transform-origin-center rounded-full"
                 style={{ 
-                  transform: `scale(${1.15 + (scale - 1) * 0.8})`,
+                  transform: `scale(${1.05 + (scale - 1) * 0.8})`,
                 }}
               />
               
