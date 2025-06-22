@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useScrollScale } from '@/hooks/useScrollScale';
 import { TrendingUp, Shield, Clock, Zap } from "lucide-react";
@@ -64,8 +63,10 @@ const TraderHero = () => {
               <img 
                 src="/lovable-uploads/f4d21867-b8f3-41d3-85ca-447df0e036a2.png" 
                 alt="Midas King" 
-                className="relative z-10 w-full h-full object-contain transition-transform duration-500 ease-out hover:scale-110 transform-origin-center"
-                style={{ transform: `scale(${scale})` }}
+                className="relative z-10 w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105 transform-origin-center"
+                style={{ 
+                  transform: `scale(${scale * 1.3})`,
+                }}
               />
               
               <div className="absolute top-[25%] left-[25%] w-3 h-3 bg-[#caa75d] rounded-full opacity-60 animate-ping"></div>
