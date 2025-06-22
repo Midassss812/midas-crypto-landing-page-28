@@ -29,7 +29,7 @@ const PageFooter = () => {
   };
 
   return (
-    <footer className="relative z-10 pb-8 text-center text-sm text-[#888] opacity-70 mt-auto px-6">
+    <footer className="relative z-10 pb-8 text-center text-sm text-[#888] opacity-70 mt-auto px-6 pointer-events-auto">
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-[#c0c0c0]">
         <button 
           onClick={copyEmail}
